@@ -6,9 +6,7 @@ import { ImportComponent } from './commercial-jobs/import/import.component';
 import { FilterComponent } from './commercial-jobs/filter/filter.component';
 
 const routes: Routes = [
-  {path: '', component: CommercialJobsComponent, children: [
-    {path: ''}
-  ]},
+  {path: '', component: CommercialJobsComponent},
   {path: 'import', component: ImportComponent},
   {path: 'filter', component: FilterComponent}
 ];
