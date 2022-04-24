@@ -2,24 +2,26 @@
   <section class="section__jobs--list">
     <div class="section__jobs--list-heading">
       <div class="section__jobs--list-heading_action">
-        <a routerLink="/import">
-          <fa-icon [icon]="faUpload" class="section__jobs--list-heading_action-btn btn"></fa-icon>
+        <a routerLink="import">
+          <fa-icon [icon]="faUpload" class="section__jobs--list-heading_action-btn btn import"></fa-icon>
         </a>
         <p id="jobCount">Displaying {{ jobs.length }} Jobs</p>
-        <a routerLink="/filters">
-          <fa-icon id="jobsFilterIcon" [icon]="faFilter" class="section__jobs--list-heading_action-btn btn"
-            title="filter">
-          </fa-icon>
-        </a>
-        <fa-icon id="jobsDownloadIcon" [icon]="faDownload" class="section__jobs--list-heading_action-btn btn"
-          title="xlsx export"></fa-icon>
+        <div class="section__jobs--list-heading_action-group">
+          <a routerLink="filter">
+            <fa-icon id="jobsFilterIcon" [icon]="faFilter" class="section__jobs--list-heading_action-btn btn"
+              title="filter">
+            </fa-icon>
+          </a>
+          <fa-icon id="jobsDownloadIcon" [icon]="faDownload" class="section__jobs--list-heading_action-btn btn"
+            title="xlsx export"></fa-icon>
+        </div>
       </div>
       <div class="section__jobs--list-heading_headers">
         <div>State</div>
         <div>City</div>
         <div>Address</div>
         <div>Customer</div>
-        <div>Order Number</div>
+        <div>Order #</div>
         <div>Due Date</div>
         <div>Order Age</div>
         <div>Assignment</div>
@@ -42,4 +44,4 @@
     </ul>
   </section>
 </main>
-<ng-content [currentJob]="currentJob" [ngClass]="{hidden: this.detailsHidden === true}"></ng-content>
+<!-- <app-details-home [currentJob]="currentJob" [ngClass]="{hidden: this.detailsHidden === true}"></app-details-home> -->

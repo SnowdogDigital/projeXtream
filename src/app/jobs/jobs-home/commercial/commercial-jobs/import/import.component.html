@@ -1,1 +1,14 @@
-<p>import works!</p>
+<main id="section__import" class="section__import " name="import">
+  <form class="section__import--box" id="importForm">
+    <div class="section__import--box_close">
+      <a routerLink="/jobs">
+        <i class="close-modal fa-solid fa-square-xmark section__import--box_close-icon close-modal_icon"
+          id="section__import--close-icon" name="close-circle-outline"></i>
+      </a>
+    </div>
+    <div class="section__import--select">
+      <input type="file" class="section__import--select-input" id="importInput" accept=".xlsx,.csv">
+    </div>
+    <button action="submit" class="btn section__import--upload" id="section__import-btn" disabled>Import</button>
+  </form>
+</main>

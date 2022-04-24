@@ -1,1 +1,153 @@
-<p>filter works!</p>
+<main id="section__filters" class="section__filters " name="details">
+  <section class="section__filters--header">
+    <h3 class="section__filters--header-heading">Job Table Filters</h3>
+    <div class="close-modal section__filters--header_close">
+      <a routerLink="/jobs">
+        <!-- <fa-icon [icon]="faSquareXmark" class="section__filters--header_close-icon close-modal_icon"></fa-icon> -->
+      </a>
+    </div>
+  </section>
+  <section class="section__filters--dates">
+    <div class="section__filters--dates-info" name="TASK_STATUS_DATE" id="taskStatusDateFilter">
+      <label for="taskStatusDate">ADDED DATE</label>From
+      <input type="date" name="from" id="taskStatusDateFilterFrom" class="section__filters--dates-info_field">To
+      <input type="date" name="to" id="taskStatusDateFilterTo" class="section__filters--dates-info_field">
+    </div>
+    <div class="section__filters--dates-info" name="DESIRED_DUE_DATE" id="desiredDueDateFilter">
+      <label for="desiredDueDate">DUE DATE</label>From
+      <input type="date" name="from" id="desiredDueDateFilterFrom" class="section__filters--dates-info_field">To
+      <input type="date" name="to" id="desiredDueDateFilteTor" class="section__filters--dates-info_field">
+    </div>
+    <div class="section__filters--dates-info" name="EIS_Test" id="date-initial-eisFilter">
+      <label for="date-initial-eis">ASSIGNED DATE</label>From
+      <input type="date" name="from" id="date-initial-eisFilterFrom" class="section__filters--dates-info_field">To
+      <input type="date" name="to" id="date-initial-eisFilterTo" class="section__filters--dates-info_field">
+    </div>
+    <div class="section__filters--dates-info" name="ECD" id="date-ecdFilter">
+      <label for="date-ecd">ECD</label>From
+      <input type="date" name="from" id="date-ecdFilterFrom" class="section__filters--dates-info_input">To
+      <input type="date" name="to" id="date-ecdFilterTo" class="section__filters--dates-info_input">
+    </div>
+    <div class="section__filters--dates-info" name="Task_Complete_Date" id="date-task-completeFilter">
+      <label for="date-task-complete">Complete Date</label>From
+      <input type="date" name="from" id="date-task-completeFilterFrom" class="section__filters--dates-info_input">To
+      <input type="date" name="to" id="date-task-completeFilterTo" class="section__filters--dates-info_input">
+    </div>
+  </section>
+  <section class="section__filters--main">
+    <div class="section__filters--main-info">
+      <label for="srType">SR TYPE</label>
+      <select id="srTypeFilter" name="TYPE_OF_SR" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="coreReadyTaskType">ORDER TYPE</label>
+      <select id="coreReadyTaskTypeFilter" name="CORE_READY_TASK_TYPE" class="section__filters--main-info_field"
+        multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="state">STATE</label>
+      <select id="stateFilter" name="STATE_ORIG" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="workgroup">WORKGROUP</label>
+      <select id="workgroupFilter" name="Workgroup" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="engMgr">ENG MGR</label>
+      <select id="engMgrFilter" name="Engineering_Manager" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="constMgr">CONST MGR</label>
+      <select id="constMgrFilter" name="Contruction_Manager" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="statusGroup">REVIEW GROUP</label>
+      <select id="statusGroupFilter" name="Status_Group" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="jobStatus">STATUS</label>
+      <select id="jobStatusFilter" name="Short_Status" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="subStatus">SUB-STATUS</label>
+      <select id="subStatusFilter" name="Sub_Status" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="build-assignee">BUILD ASSIGNEE</label>
+      <select id="buildAssigneeFilter" name="Build_Assignee" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+    <div class="section__filters--main-info">
+      <label for="splice-assignee">SPLICE ASSIGNEE</label>
+      <select id="spliceAssigneeFilter" name="Splice_Assignee" class="section__filters--main-info_field" multiple>
+      </select>
+    </div>
+  </section>
+  <section class="section__filters--build">
+    <div class="section__filters--build-info">
+      <label for="enterpriseCustomerName">CUSTOMER NAME</label>
+      <input type="search" id="enterpriseCustomerNameFilter" name="Enterprise_Customer_Name"
+        class="section__filters--enterprise-info_field">
+    </div>
+    <div class="section__filters--build-info">
+      <label for="pon">PON</label>
+      <input type="search" id="ponFilter" name="PON" class="section__filters--main-info_field">
+    </div>
+    <div class="section__filters--build-info">
+      <label for="coreDocNo">DOC #</label>
+      <input type="number" id="coreDocNoFilter" name="CORE_DOC_NUMBER" class="section__filters--main-info_field">
+    </div>
+    <div class="section__filters--build-info">
+      <label for="exchange">EXCHANGE</label>
+      <input type="search" id="exchangeFilter" name="Exchange_Name" class="section__filters--main-info_field">
+    </div>
+    <!-- <div class="section__filters--build-info">
+      <label for="clliCode">CLLI CODE</label>
+      <input type="search" id="clliCodeFilter" name="CLLI_CODE" class="section__filters--main-info_field">
+    </div> -->
+    <div class="section__filters--build-info">
+      <label for="taskAge">TASK AGE</label>
+      <input type="number" id="taskAgeFilter" name="TASK_AGE" class="section__filters--main-info_field">
+    </div>
+    <!-- <div class="section__filters--build-info">
+      <label for="varasset">VARASSET #</label>
+      <input type="search" id="varassetFilter" name="TASK_LABEL_10" class="section__filters--main-info_field">
+    </div> -->
+    <div class="section__filters--build-info">
+      <label for="Related_Job">Related Job</label>
+      <input type="search" id="relatedJobFilter" name="Related_Job" class="section__filters--main-info_field">
+    </div>
+    <div class="section__filters--build-info">
+      <label for="orderNumber">ORDER #</label>
+      <input type="search" id="orderNumberFilter" name="ORDER_NUMBER" class="section__filters--main-info_field">
+    </div>
+    <div class="section__filters--build-info">
+      <label for="projectID">PROJECT ID</label>
+      <input type="search" id="projectIDFilter" name="PROJECT_ID" class="section__filters--main-info_field">
+    </div>
+    <div class="section__filters--build-info">
+      <label for="workRequired">Work Required</label>
+      <input type="seach" id="workRequiredFilter" name="Work_Required" class="section__filters--build-info_field">
+    </div>
+  </section>
+  <section class="section__filters--save">
+    <div class="section__filters--save-default">
+      <button id="section__filters-btn" class="btn section__filters--save-default" disabled>Save As Default</button>
+    </div>
+    <div class="section__filters--save-changes">
+      <button id="section__filters-btn" class="btn section__filters--save-changes_btn" disabled>Set Filters</button>
+    </div>
+    <div class="section__filters--clear">
+      <button id="section__filters-clear" class="btn section__filters--clear_btn" disabled>Clear Filters</button>
+    </div>
+  </section>
+</main>

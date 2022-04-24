@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-filter',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
+  faSquareXmark = faSquareXmark;
 
   constructor() { }
 

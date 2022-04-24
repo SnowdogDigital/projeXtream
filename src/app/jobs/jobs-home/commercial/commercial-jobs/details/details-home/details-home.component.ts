@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faCircleLeft, faCircleRight, faCirclePlus, faFilePdf, faMap, faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 
-import { Job } from '../../../../../../../../interfaces/Job';
-import { Status } from '../../../../../../../../interfaces/Status';
-import { JobsService } from '../../../../../../../../services/jobs.service';
-import { StatusesService } from '../../../../../../../../services/statuses.service';
+import { Job } from '../../../../../../interfaces/Job';
+import { Status } from '../../../../../../interfaces/Status';
+import { JobsService } from '../../../../../../services/jobs.service';
+import { StatusesService } from '../../../../../../services/statuses.service';
 
 @Component({
   selector: 'app-details-home',
