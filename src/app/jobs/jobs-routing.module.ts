@@ -7,7 +7,7 @@ import { CommercialJobsComponent } from './jobs-home/commercial/commercial-jobs/
 
 const routes: Routes = [
   {path: '', component: JobsHomeComponent},
-  { path: 'commercial-jobs', loadChildren: () => import('./jobs-home/commercial/commercial.module').then((m) => m.CommercialModule)},
+  { path: 'commercial', loadChildren: () => import('./jobs-home/commercial/commercial.module').then((m) => m.CommercialModule)},
 ];
 
 @NgModule({

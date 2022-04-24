@@ -6,8 +6,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 40%;
-  width: 30%;
+  height: 60%;
+  width: 40%;
   background-color: var(--color-tint-faded);
   box-shadow: var(--default-shadow);
   border-radius: var(--round-corners);
@@ -15,8 +15,7 @@
 
 .section__notfound--box {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 90%;
   width: 92%;
@@ -24,4 +23,18 @@
   color: var(--color-white);
   box-shadow: var(--button-shadow);
   border-radius: var(--round-corners);
+}
+
+.section__notfound--box-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 75%;
+  width: 70%;
+  background-image: linear-gradient(hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .6)), url('../../assets/Utility-Locate-Pic2.png');
+  /* background-size: cover; */
+  background-position: center;
+  border-radius: var(--round-corners);
+  filter: drop-shadow(2px 2px 3px var(--color-shadow));
 }
