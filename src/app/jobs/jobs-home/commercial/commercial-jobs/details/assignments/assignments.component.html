@@ -1,0 +1,65 @@
+<section id="section__details--enterprise" class="section__details--enterprise ">
+  <!-- <div>
+    <h5 class="section__details--enterprise-heading">Contact</h5>
+  </div> -->
+  <div class="section__details--build-info">
+    <label for="add-assignee">ADD TASK</label>
+    <fa-icon [icon]="faCirclePlus"></fa-icon>
+  </div>
+  <div class="info__group">
+    <i class="fa-solid fa-square-minus icon"></i>
+    <div class="section__details--build-info">
+      <label for="aerial-assignee">AERIAL ASSIGNEE</label>
+      <select id="aerial-assignee" class="section__details--build-info_field">
+        <option value="" selected>A-Team</option>
+      </select>
+    </div>
+    <div class="section__details--dates-info">
+      <label for="date-m6-eis">Aerial ECD</label>
+      <input type="date" id="date-m6-eis" [value]="currentJob.aerial_ecd" class="section__details--dates-info_input">
+    </div>
+    <div class="section__details--dates-info">
+      <label for="date-asr_psr-complete">Aerial Complete</label>
+      <input type="date" id="date-asr_psr-complete" [value]="currentJob.aerial_complete"
+        class="section__details--dates-info_input">
+    </div>
+  </div>
+  <div class="info__group hidden">
+    <i class="fa-solid fa-square-minus icon"></i>
+    <div class="section__details--build-info">
+      <label for="build-assignee">UG ASSIGNEE</label>
+      <select id="build-assignee" class="section__details--build-info_field">
+        <option value="" selected hidden></option>
+      </select>
+    </div>
+    <div class="section__details--dates-info">
+      <label for="date-m6-eis">UG ECD</label>
+      <input type="date" id="date-m6-eis" [value]="currentJob.ug_complete" class="section__details--dates-info_input">
+    </div>
+    <div class="section__details--dates-info">
+      <label for="date-asr_psr-complete">UG Complete</label>
+      <input type="date" id="date-asr_psr-complete" [value]="currentJob.ug_complete"
+        class="section__details--dates-info_input">
+    </div>
+  </div>
+  <div class="info__group">
+    <i class="fa-solid fa-square-minus icon"></i>
+    <div class="section__details--build-info">
+      <label for="splice-assignee">SPLICE ASSIGNEE</label>
+      <select id="splice-assignee" class="section__details--build-info_field">
+        <option value="" selected>Lewis Jahns</option>
+      </select>
+    </div>
+    <div class="section__details--dates-info">
+      <label for="date-m6-eis">Splice ECD</label>
+      <input type="date" id="date-m6-eis" [value]="currentJob.splice_complete"
+        class="section__details--dates-info_input">
+    </div>
+    <div class="section__details--dates-info">
+      <label for="date-asr_psr-complete">Splice Complete</label>
+      <input type="date" id="date-asr_psr-complete" [value]="currentJob.splice_complete"
+        class="section__details--dates-info_input">
+    </div>
+  </div>
+
+</section>

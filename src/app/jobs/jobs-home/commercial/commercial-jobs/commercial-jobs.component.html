@@ -1,0 +1,45 @@
+<main id="section__jobs" class="section__jobs" name="jobs">
+  <section class="section__jobs--list">
+    <div class="section__jobs--list-heading">
+      <div class="section__jobs--list-heading_action">
+        <a routerLink="/import">
+          <fa-icon [icon]="faUpload" class="section__jobs--list-heading_action-btn btn"></fa-icon>
+        </a>
+        <p id="jobCount">Displaying {{ jobs.length }} Jobs</p>
+        <a routerLink="/filters">
+          <fa-icon id="jobsFilterIcon" [icon]="faFilter" class="section__jobs--list-heading_action-btn btn"
+            title="filter">
+          </fa-icon>
+        </a>
+        <fa-icon id="jobsDownloadIcon" [icon]="faDownload" class="section__jobs--list-heading_action-btn btn"
+          title="xlsx export"></fa-icon>
+      </div>
+      <div class="section__jobs--list-heading_headers">
+        <div>State</div>
+        <div>City</div>
+        <div>Address</div>
+        <div>Customer</div>
+        <div>Order Number</div>
+        <div>Due Date</div>
+        <div>Order Age</div>
+        <div>Assignment</div>
+        <div>Status</div>
+      </div>
+    </div>
+    <ul class="section__jobs--list-rows">
+      <li *ngFor="let job of jobs" id="{{ job.id }}" class="section__jobs--list-rows_job"
+        (click)="onClickParent($event, job)" [ngClass]="{selected: job.id === selectedJobId}">
+        <div (click)="onClickChild($event, job)">{{ job.state }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.exchange }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.address }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.customer_name }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.order_no }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.due_date }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.age }}</div>
+        <div (click)="onClickChild($event, job)">{{ job.aerial_assignee }}</div>
+        <div (click)="onClickChild($event, job)">{{ statuses[job.status - 1].name }}</div>
+      </li>
+    </ul>
+  </section>
+</main>
+<ng-content [currentJob]="currentJob" [ngClass]="{hidden: this.detailsHidden === true}"></ng-content>

@@ -1,0 +1,55 @@
+.section__login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(204, 204, 204, 0.61);
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.section__login--modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-primary-light-faded);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75rem;
+  height: 50rem;
+  border-radius: var(--round-corners);
+  box-shadow: 12px 12px 10px 2px var(--color-shadow);
+}
+
+.section__login--modal-row {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-white-tint);
+  margin-bottom: 4rem;
+}
+.section__login--modal input {
+  width: auto;
+  height: 3rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  color: var(--color-black);
+  letter-spacing: 0.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.section__login--modal input::placeholder {
+  color: var(--color-grey-medium);
+  font-weight: 400;
+}
+.section__login--modal label {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}

@@ -1,0 +1,53 @@
+<main id="section__charts" class="section__charts ">
+  <button id="refresh" class="section__charts--refresh btn">
+    <fa-icon [icon]="faRefresh"></fa-icon>
+  </button>
+  <section id="section__charts--dashboard" class="section__charts--dashboard">
+    <div id="div-chart1" class="section__charts--dashboard-pie">
+      <h4 class="section__charts--dashboard-pie_heading">Chart 1</h4>
+      <div class="section__charts--dashboard-pie_canvas">
+        <canvas id="chart2"></canvas>
+      </div>
+    </div>
+    <div id="div-chart2" class="section__charts--dashboard-bar">
+      <h4 class="section__charts--dashboard-bar_heading">Chart 2</h4>
+      <div class="section__charts--dashboard-bar_canvas">
+        <canvas id="chart4"></canvas>
+      </div>
+    </div>
+    <div id="div-chart3" class="section__charts--dashboard-bar">
+      <h4 class="section__charts--dashboard-bar_heading">Chart 3</h4>
+      <div class="section__charts--dashboard-bar_canvas">
+        <canvas id="chart3"></canvas>
+      </div>
+    </div>
+    <div id="div-chart4" class="section__charts--dashboard-pie">
+      <h4 class="section__charts--dashboard-pie_heading">Chart 4</h4>
+      <div class="section__charts--dashboard-pie_canvas">
+        <canvas id="chart1"></canvas>
+      </div>
+    </div>
+  </section>
+  <section id="section__charts--secondary" class="section__charts--secondary hidden">
+    <div id="div-chart5" class="section__charts--secondary-bar">
+      <h4 class="section__charts--secondary-bar_heading">Chart 5</h4>
+      <div class="section__charts--secondary-bar_canvas">
+        <canvas id="chart5"></canvas>
+      </div>
+    </div>
+    <div id="div-chart6" class="section__charts--secondary-bar">
+      <h4 class="section__charts--secondary-bar_heading">Chart 6</h4>
+      <div class="section__charts--secondary-bar_canvas">
+        <canvas id="chart6"></canvas>
+      </div>
+    </div>
+  </section>
+  <div class="section__charts--arrows">
+    <button id="chartsBackward" class="section__charts--arrows-btn btn" disabled>
+      <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <button id="chartsForward" class="section__charts--arrows-btn btn">
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+  </div>
+</main>

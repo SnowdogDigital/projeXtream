@@ -1,1 +1,274 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary-lightest: #fab370;
+  --color-primary-light: #e1924a;
+  --color-primary: #cc7422;
+  --color-primary-dark: #a5570f;
+
+  --color-primary-lightest-faded: #fab37086;
+  --color-primary-light-faded: #e1924a86;
+  --color-primary-faded: #cc742286;
+  --color-primary-dark-faded: #a5570f86;
+  --color-primary-darkest-faded: #7d3c0086;
+
+  --color-secondary-light: #2f7f8a;
+  --color-secondary: #17707d;
+  --color-secondary-dark: #0b5a65;
+  --color-secondary-darkest: #01434c;
+
+  --color-secondary-light-faded: #2f7f8a52;
+  --color-secondary-faded: #17707d52;
+  --color-secondary-shade: #17707d96;
+  --color-secondary-dark-faded: #0b5a6552;
+  --color-secondary-dark-shade: #0b5a6596;
+  --color-secondary-darkest-faded: #01434cb6;
+
+  --color-grey-light: #d9d9d9;
+  --color-grey-medium: #ababab;
+  --color-grey-faded: #ababab66;
+  --color-grey-dark: #828282;
+
+  --color-white-tint: #cfc3b7;
+  --color-tint-faded: #cfc3b7cc;
+  --color-white-tint2: #b2bfcc;
+  --color-tint2-faded: #b2bfcccc;
+  --color-white-faded: #ffffffcc;
+  --color-white: #fafaff;
+  --color-black: #262626;
+  --color-shadow: #26262666;
+
+  --color-red: #f50e0e66;
+  --color-tintred: #ff000066;
+  --color-rose: #c7338a66;
+  --color-pink: #ff00f266;
+  --color-gold: #c8bc1066;
+  --color-yellow: #e5ff0066;
+  --color-orange: #fb954066;
+  --color-brown: #92441f66;
+  --color-green: #2eb46466;
+  --color-something: #55a78e66;
+  --color-purple: #8839c966;
+
+  --main-font-family: "Roboto", sans-serif;
+  --define-font-size: 10px;
+  --main-font-size: 2rem;
+  --main-font-weight: 400;
+
+  --default-padding-text: 1.5rem;
+  --default-padding-margin: 1rem;
+
+  --default-shadow: 2px 2px 8px 1px var(--color-primary-dark-faded);
+  --button-shadow: 2px 2px 8px 1px var(--color-shadow);
+  --border-grey: 2px solid var(--color-grey-light);
+  --round-corners: 5px;
+
+  --animation-forward: slideOut 0.3s forwards;
+  --animation-backward: slideIn 0.5s backwards;
+  --nav-logo-grow: logoGrow 0.3s forwards;
+  --nav-logo-shrink: logoShrink 0.45s backwards;
+
+  --bp-18: 112.5em;
+  --bp-15: 93.75em;
+  --bp-13: 81.25em;
+  --bp-12: 75em;
+  --bp-11: 68.75em;
+  --bp-9: 56.25em;
+  --bp-6: 37.5em;
+  --bp-5: 31.25em;
+  --bp-4: 25em;
+}
+
+html {
+  font-family: var(--main-font-family);
+  font-size: var(--define-font-size);
+  font-weight: var(--main-font-weight);
+}
+
+body {
+  height: 99vh;
+  font-size: var(--main-font-size);
+  background-image: url("./assets/compare-fibre-PAOv9-7VBMI-unsplash.jpg");
+  background-size: cover;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+}
+
+h5 {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--round-corners);
+  box-shadow: var(--default-shadow);
+}
+
+a {
+  text-decoration: none;
+}
+
+fa-icon {
+  cursor: pointer;
+}
+
+span {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  text-align: center;
+  padding: 0.25rem 0.5rem 0 0.5rem;
+  height: 3rem;
+  border-radius: var(--round-corners);
+  box-shadow: var(--default-shadow);
+  filter: drop-shadow(0.3rem 0 0.3rem var(--color-secondary-darkest-faded));
+}
+
+label {
+  background-color: var(--color-white-faded);
+  color: var(--color-secondary-dark);
+  padding: 0 0.3rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: var(--round-corners);
+  box-shadow: var(--default-shadow);
+  filter: drop-shadow(0.3rem 0 0.3rem var(--color-secondary-darkest-faded));
+}
+
+input {
+  padding: .25rem .5rem 0 0.5rem;
+}
+
+input,
+select {
+  background-color: var(--color-white-tint);
+  color: var(--color-black);
+  height: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  border: 1px solid var(--color-black);
+  border-radius: var(--round-corners);
+  box-shadow: var(--default-shadow);
+  filter: drop-shadow(0.3rem 0 0.3rem var(--color-secondary-darkest-faded));
+}
+
+select,
+.checkbox {
+  cursor: pointer;
+}
+
+option {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
+
+::-webkit-scrollbar {
+  width: 1.5rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-primary-light-faded);
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-dark);
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary-dark);
+}
+
+::selection {
+  background: var(--color-primary);
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+}
+
+.disabled {
+  background-color: var(--color-grey-light);
+  color: var(--color-grey-dark);
+}
+
+.btn {
+  background-color: var(--color-primary);
+  color: var(--color-white-tint);
+  box-shadow: var(--button-shadow);
+  border-radius: 5px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+@media only screen and (max-width: var(--bp-18)) {
+  .btn {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.btn:hover {
+  color: var(--color-secondary) !important;
+  box-shadow: var(--button-shadow);
+}
+
+.btn:active {
+  box-shadow: var(--button-shadow);
+  transform: scale(95%);
+}
+
+.btn:disabled {
+  background-color: var(--color-grey-light);
+  color: var(--color-grey-dark);
+}
+.btn:disabled:hover {
+  background-color: var(--color-grey-dark);
+  color: var(--color-red) !important;
+}
+
+.close-modal {
+  color: var(--color-primary);
+}
+
+.close-modal_icon {
+  font-size: 3rem;
+  color: var(--color-white);
+  filter: drop-shadow(var(--button-shadow));
+  transition: all 0.2s;
+}
+
+.close-modal_icon:hover,
+.close-modal_icon:active {
+  color: var(--color-secondary-light);
+  cursor: pointer;
+}
+
+.close-modal_icon:active {
+  transform: scale(90%);
+}
+
+.selected {
+  background-color: var(--color-primary-shade);
+  color: var(--color-white) !important;
+}
+
+.hidden {
+  display: none !important;
+}

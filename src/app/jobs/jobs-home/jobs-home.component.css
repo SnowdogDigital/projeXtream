@@ -1,0 +1,77 @@
+.section__jobshome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 75vh;
+  width: 80vw;
+  background-color: var(--color-primary-dark-faded);
+  border-radius: var(--round-corners);
+}
+
+.section__jobshome--backing {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  height: 98%;
+  width: 99%;
+  background-color: var(--color-primary-light-faded);
+  border-radius: var(--round-corners);
+}
+
+.section__jobshome--type {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+  min-width: 20%;
+  padding: var(--default-padding-margin);
+  border-radius: var(--round-corners);
+}
+
+.section__jobshome--type-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: var(--default-padding-margin);
+  color: var(--color-primary-dark);
+  background-color: var(--color-tint-faded);
+  border-radius: var(--round-corners);
+}
+
+.one {
+  background-image: linear-gradient(to left top, var(--color-secondary-dark-faded), var(--color-secondary-darkest-faded)), url("../../../assets/high-voltage-black-electrical-cable-rolled-large-cable-reels-high-voltage-black-electrical-cable-rolled-large-cable-reels-173332745.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+.two {
+  background-image: linear-gradient(to left top, var(--color-secondary-dark-faded), var(--color-secondary-darkest-faded)), url("../../../assets/sever-gb687a153b_640.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+.three {
+  background-image: linear-gradient(to left top, var(--color-secondary-dark-faded), var(--color-secondary-darkest-faded)), url("../../../assets/power-lines-g2776bb29a_640.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+.one:hover {
+  background-image: linear-gradient(hsla(0, 0%, 0%, .4), hsla(0, 0%, 0%, .4)), url("../../../assets/high-voltage-black-electrical-cable-rolled-large-cable-reels-high-voltage-black-electrical-cable-rolled-large-cable-reels-173332745.jpg");  
+}
+.two:hover {
+  background-image: linear-gradient(hsla(0, 0%, 0%, .4), hsla(0, 0%, 0%, .4)), url("../../../assets/sever-gb687a153b_640.jpg");  
+}
+.three:hover {
+  background-color: linear-gradient();
+  background-image: linear-gradient(hsla(0, 0%, 0%, .4), hsla(0, 0%, 0%, .4)), url("../../../assets/power-lines-g2776bb29a_640.jpg");  
+}
+

@@ -1,0 +1,141 @@
+@keyframes slideOut {
+  from {
+    width: 6rem;
+  }
+  to {
+    width: 18rem;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 18rem;
+  }
+  to {
+    width: 6rem;
+  }
+}
+
+@keyframes logoGrow {
+  from {
+    height: 5rem;
+    margin-left: 0.5rem;
+  }
+  to {
+    height: 10rem;
+    margin-left: 4rem;
+  }
+}
+
+@keyframes logoShrink {
+  from {
+    height: 10rem;
+    margin-left: 4rem;
+  }
+  to {
+    height: 5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+header {
+  position: fixed;
+  height: 100vh;
+  background-color: var(--color-primary);
+  font-size: var(--main-font-size);
+  width: 6rem;
+  overflow: hidden;
+  z-index: 9990;
+  animation: var(--animation-backward);
+}
+
+header:hover {
+  animation: var(--animation-forward);
+}
+header:hover img {
+  animation: var(--nav-logo-grow);
+}
+
+header img {
+  animation: var(--nav-logo-shrink);
+  border-radius: var(--round-corners);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.navigation a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation__links {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  list-style: none;
+  height: 100%;
+}
+
+.navigation__links--item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: var(--default-padding-margin);
+  padding-right: var(--default-padding-margin);
+  height: 100%;
+  border-radius: var(--round-corners);
+}
+
+.navigation__links--item:hover fa-icon,
+.navigation__links--item:active fa-icon,
+.navigation__links--item:hover i,
+.navigation__links--item:active i {
+  color: var(--color-secondary-dark);
+  border-radius: var(--round-corners);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation__links--item-logo {
+  height: 5rem;
+  background-color: var(--color-white);
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--round-corners);
+}
+
+.navigation__links--item_text {
+  color: var(--color-white);
+  margin-left: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+fa-icon {
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+  border-radius: 2px;
+  margin-left: var(--default-padding-margin);
+  padding: var(--default-padding-margin);
+  border-radius: 40%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.current fa-icon,
+.current i {
+  background-color: var(--color-secondary-dark) !important;
+  color: var(--color-white) !important;
+  border-radius: var(--round-corners);
+}
+
+.current:hover fa-icon,
+.current:hover i {
+  color: var(--color-primary) !important;
+}
