@@ -18,6 +18,7 @@
 
 .section__report--box-form_job-field_add {
 display: flex;
+justify-content: center;
 align-self: center;
 width: 25%;
 }

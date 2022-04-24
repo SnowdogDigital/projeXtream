@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faFileCirclePlus, faDownload, faFilter } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-daily-table',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-table.component.css']
 })
 export class DailyTableComponent implements OnInit {
+  faFileCirclePlus = faFileCirclePlus;
+  faDownload = faDownload;
+  faFilter = faFilter;
 
   constructor() { }
 

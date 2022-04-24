@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { DailyRoutingModule } from './daily-routing.module';
 import { DailyTableComponent } from './daily-table/daily-table.component';
@@ -17,7 +18,8 @@ import { DailyFormTaskComponent } from './daily-form/daily-form-task/daily-form-
   ],
   imports: [
     CommonModule,
-    DailyRoutingModule
+    DailyRoutingModule,
+    FontAwesomeModule
   ]
 })
 export class DailyModule { }

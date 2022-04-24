@@ -21,15 +21,16 @@
     <input type="number">
   </div>
   <div class="section__report--box-form_job-field_add">
-    <i (click)="onClick()" class="section__report--box-form_job-field_add-btn btn fa-solid fa-circle-plus">Add Task</i>
+    <fa-icon (click)="onClick()" [icon]="faCirclePlus" class="section__report--box-form_job-field_add-btn btn">
+    </fa-icon>
   </div>
   <div class="section__report--box-form_job-field">
     <input type="text" placeholder="Enter Job Comments" class="section__report--box-form_job-field_note">
   </div>
   <div class="section__report--box-form_job-field_add">
     <label for="dailyPhoto">
-      <i (click)="onClickPhoto()" class="section__report--box-form_job-field_photo-btn btn fa-solid fa-images">Add
-        IMG</i>
+      <fa-icon (click)="onClickPhoto()" [icon]="faImages" class="section__report--box-form_job-field_photo-btn btn">
+      </fa-icon>
     </label>
     <input type="file" id="dailyPhoto" accept="image/*, .pdf" multiple
       class="section__report--box-form_job-field_photo">

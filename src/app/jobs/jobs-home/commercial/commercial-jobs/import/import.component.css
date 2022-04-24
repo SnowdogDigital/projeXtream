@@ -31,11 +31,17 @@
 .section__import--box_close {
   align-self: flex-end;
   margin-right: 1rem;
-  margin-top: -7rem;
+  margin-top: -5rem;
 }
 
-.section__import--box_close i {
+.close-modal_icon {
+  color: var(--color-primary);
   height: 2rem;
+  filter: drop-shadow(2px 2px 2px var(--color-shadow));
+}
+
+.close-modal_icon:hover {
+  color: var(--color-secondary);
 }
 
 .section__import--select {

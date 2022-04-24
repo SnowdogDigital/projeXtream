@@ -6,7 +6,7 @@
     <section class="section__report--box-header">
       <div class="section__report--box-header_field">
         <label>User ID</label>
-        <span>EMP6048</span>
+        <span>DEMO654</span>
       </div>
       <div class="section__report--box-header_field">
         <label>Date</label>
@@ -17,7 +17,7 @@
       <app-daily-form-job *ngFor="let job of reportJobs"></app-daily-form-job>
       <div class="section__report--box-form_add">
         <label>Add Job</label>
-        <i (click)="onClick()" class="section__report--box-form_add-btn btn fa-solid fa-square-plus"></i>
+        <fa-icon (click)="onClick()" [icon]="faSquarePlus" class="section__report--box-form_add-btn btn"></fa-icon>
       </div>
 
     </form>

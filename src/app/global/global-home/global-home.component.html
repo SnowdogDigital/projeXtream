@@ -3,10 +3,13 @@
     <div class="section__global--list-heading">
       <div class="section__global--list-heading_action">
         <p id="projectCount"></p>
-        <i id="globalFilterIcon" class="fa-solid fa-filter section__global--list-heading_action-btn btn" title="filter">
-        </i>
-        <i id="globalDownloadIcon" class="fa-solid fa-file-export section__global--list-heading_action-btn btn"
-          title="xlsx export"></i>
+        <a routerLink="filter">
+          <fa-icon id="globalFilterIcon" [icon]="faFilter" class="section__global--list-heading_action-btn btn"
+            title="filter">
+          </fa-icon>
+        </a>
+        <fa-icon id="globalDownloadIcon" [icon]="faDownload" class="section__global--list-heading_action-btn btn"
+          title="xlsx export"></fa-icon>
       </div>
       <div class="section__global--list-heading_headers">
         <div>State</div>

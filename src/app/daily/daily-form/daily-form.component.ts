@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-daily-form',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-form.component.css']
 })
 export class DailyFormComponent implements OnInit {
+  faSquarePlus = faSquarePlus;
+  
   reportJobs = ['job1'];
 
   constructor() { }

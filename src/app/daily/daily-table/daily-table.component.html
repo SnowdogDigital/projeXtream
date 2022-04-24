@@ -1,14 +1,24 @@
-<main id="section__global" class="section__global " name="global">
-  <section class="section__global--list">
-    <div class="section__global--list-heading">
-      <div class="section__global--list-heading_action">
-        <p id="projectCount"></p>
-        <i id="globalFilterIcon" class="fa-solid fa-filter section__global--list-heading_action-btn btn" title="filter">
-        </i>
-        <i id="globalDownloadIcon" class="fa-solid fa-file-export section__global--list-heading_action-btn btn"
-          title="xlsx export"></i>
+<main id="section__daily" class="section__daily " name="global">
+  <section class="section__daily--list">
+    <div class="section__daily--list-heading">
+      <div class="section__daily--list-heading_action">
+        <a routerLink="form">
+          <fa-icon id="dailyFormIcon" [icon]="faFileCirclePlus" class="section__daily--list-heading_action-btn btn"
+            title="dailyForm">
+          </fa-icon>
+        </a>
+        <p id="dailyCount"></p>
+        <div class="section__daily--list-heading_action-group">
+          <a routerLink="filter">
+            <fa-icon id="dailyFilterIcon" [icon]="faFilter" class="section__daily--list-heading_action-btn btn"
+              title="filter">
+            </fa-icon>
+          </a>
+          <fa-icon id="dailyDownloadIcon" [icon]="faDownload" class="section__daily--list-heading_action-btn btn"
+            title="xlsx export"></fa-icon>
+        </div>
       </div>
-      <div class="section__global--list-heading_headers">
+      <div class="section__daily--list-heading_headers">
         <div>Username</div>
         <div>Job Count</div>
         <div>Total Hrs</div>
@@ -17,8 +27,8 @@
         <div>Approve Date</div>
       </div>
     </div>
-    <ul class="section__global--list-rows">
-      <li class="section__global--list-rows_job">
+    <ul class="section__daily--list-rows">
+      <li class="section__daily--list-rows_job">
         <div>DEMO654</div>
         <div>2</div>
         <div>11</div>

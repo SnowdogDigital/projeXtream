@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCirclePlus, faImages } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-daily-form-job',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-form-job.component.css']
 })
 export class DailyFormJobComponent implements OnInit {
+  faCirclePlus = faCirclePlus;
+  faImages = faImages;
+
   tasks = ['task1'];
 
   constructor() { }

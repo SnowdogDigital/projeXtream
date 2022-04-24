@@ -1,1 +1,10 @@
-<p>daily-form-task works!</p>
+<div class="section__report--box-form_job-field">
+  <label>Work Performed</label>
+  <select>
+    <option *ngFor="let code of jobCodes">{{ code.description }}</option>
+  </select>
+</div>
+<div class="section__report--box-form_job-field">
+  <label>Qty.</label>
+  <input type="number">
+</div>

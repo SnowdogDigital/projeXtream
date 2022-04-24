@@ -1,4 +1,4 @@
-.section__global {
+.section__daily {
   display: flex;
   justify-content: space-evenly;
 
@@ -7,7 +7,7 @@
   z-index: 1;
 }
 
-.section__global--list {
+.section__daily--list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,7 +21,7 @@
   margin: 2rem 0 0 0;
 }
 
-.section__global--list-heading {
+.section__daily--list-heading {
   background-color: var(--color-primary-light-faded);
   list-style: none;
   padding: var(--default-padding-margin);
@@ -29,12 +29,9 @@
   width: 100%;
 }
 
-.section__global--list-heading_headers {
+.section__daily--list-heading_headers {
   display: grid;
-  grid-template-columns:
-    0.2fr 0.6fr repeat(3, 0.4fr)
-    repeat(2, 0.3fr)
-    repeat(2, 0.5fr);
+  grid-template-columns: repeat(6, 1fr);
   justify-items: center;
   align-items: center;
   gap: 0.5rem;
@@ -47,15 +44,19 @@
   letter-spacing: 1.5px;
 }
 
-.section__global--list-heading_action {
+.section__daily--list-heading_action {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 
   color: var(--color-secondary-light);
   padding: 0.7rem 1rem 0.7rem 1rem;
   font-size: 2rem;
   font-weight: 500;
+}
+
+#dailyFormIcon {
+  margin-left: 2.5rem;
 }
 
 .section__jobs--list-heading_action p {
@@ -70,7 +71,7 @@
   padding: 0.5rem 1rem;
 }
 
-.section__global--list-heading_action-btn {
+.section__daily--list-heading_action-btn {
   font-size: 2.5rem;
   margin-right: 3rem;
   padding: 0.4rem;
@@ -78,13 +79,13 @@
   border: 2px solid var(--color-secondary-dark);
 }
 
-.section__global--list-heading_action-btn:hover,
-.section__global--list-heading_action-btn:active {
-  color: var(--color-white);
+.section__daily--list-heading_action-btn:hover,
+.section__daily--list-heading_action-btn:active {
+  color: var(--color-white) !important;
   border-color: var(--color-white);
 }
 
-.section__global--list-rows {
+.section__daily--list-rows {
   background-color: var(--color-primary-light-faded);
   list-style: none;
   overflow-y: scroll;
@@ -94,12 +95,9 @@
   height: 100%;
 }
 
-.section__global--list-rows_job {
+.section__daily--list-rows_job {
   display: grid;
-  grid-template-columns:
-    0.2fr 0.6fr repeat(3, 0.4fr)
-    repeat(2, 0.3fr)
-    repeat(2, 0.5fr);
+  grid-template-columns: repeat(6, 1fr);
   justify-items: center;
   align-items: center;
   margin-top: 3px;
@@ -114,13 +112,13 @@
   border-radius: var(--round-corners);
 }
 
-.section__global--list-rows_job:hover {
+.section__daily--list-rows_job:hover {
   cursor: pointer;
   background-color: var(--color-secondary-dark-shade);
   color: var(--color-white);
 }
 
-.section__global--list-rows_job:first-child {
+.section__daily--list-rows_job:first-child {
   margin-top: 0;
 }
 

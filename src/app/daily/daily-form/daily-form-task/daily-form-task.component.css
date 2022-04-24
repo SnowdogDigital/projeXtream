@@ -1,0 +1,7 @@
+.section__report--box-form_job-field {
+  display: flex;
+  flex-direction: column;
+}
+.section__report--box-form_job-field:first-of-type {
+  margin-bottom: 1rem;
+}
