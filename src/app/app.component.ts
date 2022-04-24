@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faChartLine, faEarthAmericas, faList, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBusinessTime, faChartLine, faEarthAmericas, faList, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,7 @@ import { faChartLine, faEarthAmericas, faList, faLock, faUser } from '@fortaweso
 })
 export class AppComponent {
   title = 'ProjeXtream';
+  faBusinessTime = faBusinessTime;
   faChartLine = faChartLine;
   faEarthAmericas = faEarthAmericas;
   faList = faList;

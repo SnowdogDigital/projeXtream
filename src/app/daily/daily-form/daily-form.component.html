@@ -1,0 +1,38 @@
+<main class="section__report">
+  <div class="section__report--heading">
+    <h2 class="section__report--heading-header">Daily Report</h2>
+  </div>
+  <div class="section__report--box">
+    <section class="section__report--box-header">
+      <div class="section__report--box-header_field">
+        <label>User ID</label>
+        <span>EMP6048</span>
+      </div>
+      <div class="section__report--box-header_field">
+        <label>Date</label>
+        <input type="date" />
+      </div>
+    </section>
+    <form action="" class="section__report--box-form">
+      <app-daily-form-job *ngFor="let job of reportJobs"></app-daily-form-job>
+      <div class="section__report--box-form_add">
+        <label>Add Job</label>
+        <i (click)="onClick()" class="section__report--box-form_add-btn btn fa-solid fa-square-plus"></i>
+      </div>
+
+    </form>
+    <section class="section__report--box-footer">
+      <div class="section__report--box-footer_total">
+        <label>Job Count</label>
+        <span>2</span>
+      </div>
+      <div class="section__report--box-footer_total">
+        <label>Hours Total</label>
+        <span>12</span>
+      </div>
+      <div class="section__report--box-footer_btn">
+        <button class="section__report--box-footer_btn-submit btn">Submit</button>
+      </div>
+    </section>
+  </div>
+</main>

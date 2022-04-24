@@ -1,0 +1,37 @@
+<div class="section__report--box-form_job">
+  <div class="section__report--box-form_job-field">
+    <label>Job Type</label>
+    <select>
+      <option value="">BAU</option>
+      <option value="">Commercial</option>
+      <option value="">Special Projects</option>
+    </select>
+  </div>
+  <div class="section__report--box-form_job-field">
+    <label>Select Job</label>
+    <select>
+      <option value="">Job #1 - Some Address</option>
+      <option value="">Job #2 - Other Address</option>
+      <option value="">Job #3 - Another Address</option>
+    </select>
+  </div>
+  <app-daily-form-task *ngFor="let task of tasks"></app-daily-form-task>
+  <div class="section__report--box-form_job-field">
+    <label>HRS</label>
+    <input type="number">
+  </div>
+  <div class="section__report--box-form_job-field_add">
+    <i (click)="onClick()" class="section__report--box-form_job-field_add-btn btn fa-solid fa-circle-plus">Add Task</i>
+  </div>
+  <div class="section__report--box-form_job-field">
+    <input type="text" placeholder="Enter Job Comments" class="section__report--box-form_job-field_note">
+  </div>
+  <div class="section__report--box-form_job-field_add">
+    <label for="dailyPhoto">
+      <i (click)="onClickPhoto()" class="section__report--box-form_job-field_photo-btn btn fa-solid fa-images">Add
+        IMG</i>
+    </label>
+    <input type="file" id="dailyPhoto" accept="image/*, .pdf" multiple
+      class="section__report--box-form_job-field_photo">
+  </div>
+</div>

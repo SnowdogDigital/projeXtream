@@ -1,0 +1,43 @@
+.section__report--box-form_job {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: var(--default-padding-margin);
+  background-color: var(--color-primary-light-faded);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--round-corners);
+  margin-bottom: .75rem;
+  overflow: auto;
+}
+
+.section__report--box-form_job-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.section__report--box-form_job-field_add {
+display: flex;
+align-self: center;
+width: 25%;
+}
+.section__report--box-form_job-field_add-btn {
+  letter-spacing: .25rem;
+}
+
+.section__report--box-form_job-field_add-note{
+  width: 80%;
+}
+
+.section__report--box-form_job-field_photo {
+  display: none;
+}
+
+.section__report--box-form_job-field_add label {
+  background: transparent;
+  padding: 0;
+}
+
+.section__report--box-form_job-field_photo-btn {
+  letter-spacing: .25rem;
+}

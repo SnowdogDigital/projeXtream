@@ -6,6 +6,7 @@ import { LoginHomeComponent } from './login/login-home/login-home.component';
 
 const routes: Routes = [
   { path: 'charts', loadChildren: () => import('./charts/charts.module').then((m) => m.ChartsModule)},
+  { path: 'daily', loadChildren: () => import('./daily/daily.module').then((m) => m.DailyModule)},
   { path: 'global', loadChildren: () => import('./global/global.module').then((m) => m.GlobalModule)},
   { path: 'jobs', loadChildren: () => import('./jobs/jobs.module').then((m) => m.JobsModule)},
   { path: 'login', loadChildren: () => import('./login/login.module').then((m) => m.LoginModule)},
