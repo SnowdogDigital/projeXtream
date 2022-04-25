@@ -8,7 +8,8 @@ import { FilterComponent } from './commercial-jobs/filter/filter.component';
 const routes: Routes = [
   {path: '', component: CommercialJobsComponent},
   {path: 'import', component: ImportComponent},
-  {path: 'filter', component: FilterComponent}
+  {path: 'filter', component: FilterComponent},
+  {path: 'details', loadChildren: () => import('./commercial-jobs/details/details.module').then((m) => m.DetailsModule)}
 ];
 
 @NgModule({

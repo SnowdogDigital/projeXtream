@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'jobs', loadChildren: () => import('./jobs/jobs.module').then((m) => m.JobsModule)},
   { path: 'login', loadChildren: () => import('./login/login.module').then((m) => m.LoginModule)},
   { path: 'user', loadChildren: () => import('./user/user.module').then((m) => m.UserModule)},
-  { path: '', component: LoginHomeComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: '**', component: NotFoundComponent }
 ];
 

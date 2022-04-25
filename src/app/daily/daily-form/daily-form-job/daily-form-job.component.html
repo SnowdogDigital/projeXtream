@@ -21,7 +21,8 @@
     <input type="number">
   </div>
   <div class="section__report--box-form_job-field_add">
-    <fa-icon (click)="onClick()" [icon]="faCirclePlus" class="section__report--box-form_job-field_add-btn btn">
+    <fa-icon (click)="onClick()" [icon]="faCirclePlus" class="section__report--box-form_job-field_add-btn btn"
+      title="Add Task">
     </fa-icon>
   </div>
   <div class="section__report--box-form_job-field">
@@ -29,7 +30,8 @@
   </div>
   <div class="section__report--box-form_job-field_add">
     <label for="dailyPhoto">
-      <fa-icon (click)="onClickPhoto()" [icon]="faImages" class="section__report--box-form_job-field_photo-btn btn">
+      <fa-icon (click)="onClickPhoto()" [icon]="faImages" class="section__report--box-form_job-field_photo-btn btn"
+        title="Add Image">
       </fa-icon>
     </label>
     <input type="file" id="dailyPhoto" accept="image/*, .pdf" multiple

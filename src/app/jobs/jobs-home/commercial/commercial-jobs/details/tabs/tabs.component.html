@@ -1,0 +1,20 @@
+<ul class="details__router--nav">
+  <li class="details__router--nav-link">
+    <a class="details__router--nav-link_a" routerLink="./" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">Assignments</a>
+  </li>
+  <li class="details__router--nav-link">
+    <a class="details__router--nav-link_a" routerLink="./contacts" routerLinkActive="active">Contacts</a>
+  </li>
+  <li class="details__router--nav-link">
+    <a class="details__router--nav-link_a" routerLink="./design" routerLinkActive="active">Design</a>
+  </li>
+  <li class="details__router--nav-link">
+    <a class="details__router--nav-link_a" routerLink="./permits" routerLinkActive="active">Permits</a>
+  </li>
+</ul>
+
+<div class="details__tabs">
+  <router-outlet></router-outlet>
+
+</div>

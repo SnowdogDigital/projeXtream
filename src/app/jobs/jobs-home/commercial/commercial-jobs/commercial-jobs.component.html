@@ -29,19 +29,18 @@
       </div>
     </div>
     <ul class="section__jobs--list-rows">
-      <li *ngFor="let job of jobs" id="{{ job.id }}" class="section__jobs--list-rows_job"
+      <li *ngFor="let job of jobs" id="{{ job.id }}" routerLink="details" class="section__jobs--list-rows_job"
         (click)="onClickParent($event, job)" [ngClass]="{selected: job.id === selectedJobId}">
-        <div (click)="onClickChild($event, job)">{{ job.state }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.exchange }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.address }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.customer_name }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.order_no }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.due_date }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.age }}</div>
-        <div (click)="onClickChild($event, job)">{{ job.aerial_assignee }}</div>
-        <div (click)="onClickChild($event, job)">{{ statuses[job.status - 1].name }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.state }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.exchange }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.address }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.customer_name }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.order_no }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.due_date }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.age }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ job.aerial_assignee }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ statuses[job.status - 1].name }}</div>
       </li>
     </ul>
   </section>
 </main>
-<!-- <app-details-home [currentJob]="currentJob" [ngClass]="{hidden: this.detailsHidden === true}"></app-details-home> -->

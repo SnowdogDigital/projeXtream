@@ -1,0 +1,13 @@
+.details__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+.details__contacts--customer-info,
+.details__contacts--lcon-info {
+  display: flex;
+}

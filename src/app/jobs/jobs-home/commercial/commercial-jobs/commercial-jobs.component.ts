@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { faFilter, faDownload, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -14,13 +14,14 @@ import { StatusesService } from '../../../../services/statuses.service';
   styleUrls: ['./commercial-jobs.component.css']
 })
 export class CommercialJobsComponent implements OnInit {
+  @Output() currentJob = {};
   faFilter = faFilter;
   faDownload = faDownload;
   faUpload = faUpload;
   
   jobs: Job[] = [];
   statuses: Status[] = [];
-  currentJob = {};
+  
   selectedJobId = 0;
   statusIndex = 0;
   tableHidden = false;
