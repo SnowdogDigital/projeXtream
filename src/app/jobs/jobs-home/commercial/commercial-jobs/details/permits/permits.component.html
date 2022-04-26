@@ -1,1 +1,53 @@
-<p>permits works!</p>
+<section class="details__permits">
+  <div class="details__permits--group">
+    <div class="details__permits--group-info">
+      <label for="jeopType">Permit required</label>
+      <select id="jeopType">
+        <option value="yes" selected>Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+    <div class="details__permits--group-info">
+      <label for="jeopReason">Permit rcvd</label>
+      <input type="date" id="jeopReason" value="2022-03-16">
+    </div>
+    <div class="details__permits--group-info">
+      <label for="jeopDescription">Permit</label>
+      <fa-icon [icon]="faFilePdf"></fa-icon>
+    </div>
+  </div>
+  <div class="details__permits--group">
+    <div class="details__permits--group-info">
+      <label for="jeopType">DIG TICKET REQUIRED</label>
+      <select id="jeopType">
+        <option value="yes">Yes</option>
+        <option value="no" selected>No</option>
+      </select>
+    </div>
+    <div class="details__permits--group-info hidden">
+      <label for="jeopReason">Dig Ticket rcvd</label>
+      <input type="date" id="jeopReason">
+    </div>
+    <div class="details__permits--group-info hidden">
+      <label for="jeopDescription">Dig Ticket</label>
+      <fa-icon [icon]="faFilePdf"></fa-icon>
+    </div>
+  </div>
+  <div class="details__permits--group">
+    <div class="details__permits--group-info">
+      <label for="jeopType">TCP REQUIRED</label>
+      <select id="jeopType">
+        <option value="yes" selected>Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+    <div class="details__permits--group-info">
+      <label for="jeopReason">TCP rcvd</label>
+      <input type="date" id="jeopReason" value="2022-03-15">
+    </div>
+    <div class="details__permits--group-info">
+      <label for="jeopDescription">TCP</label>
+      <fa-icon [icon]="faFilePdf"></fa-icon>
+    </div>
+  </div>
+</section>

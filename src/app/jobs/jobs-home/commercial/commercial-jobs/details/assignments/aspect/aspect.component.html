@@ -1,0 +1,17 @@
+<div class="aspect__group">
+  <div class="aspect__group--info">
+    <label for="{{ aspect }}-assignee">{{ aspect }} ASSIGNEE</label>
+    <select id="{{ aspect }}-assignee" class="aspect__group--info_field">
+      <option value="" selected>A-Team</option>
+    </select>
+  </div>
+  <div class="aspect__group--info">
+    <label for="{{ aspect }}-ecd">{{ aspect }} ECD</label>
+    <input type="date" id="{{ aspect }}-ecd" class="aspect__group--info_input">
+  </div>
+  <div class="aspect__group--info">
+    <label for="{{ aspect }}-complete">{{ aspect }} Complete</label>
+    <input type="date" id="{{ aspect }}-complete" class="aspect__group--info_input">
+  </div>
+  <fa-icon [icon]="faSquareMinus"></fa-icon>
+</div>

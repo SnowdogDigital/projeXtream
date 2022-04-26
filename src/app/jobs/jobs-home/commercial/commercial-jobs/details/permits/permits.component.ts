@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-permits',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./permits.component.css']
 })
 export class PermitsComponent implements OnInit {
+  faFilePdf = faFilePdf;
 
   constructor() { }
 

@@ -10,6 +10,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { NotesComponent } from './notes/notes.component';
 import { DesignComponent } from './design/design.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { AspectComponent } from './assignments/aspect/aspect.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TabsComponent } from './tabs/tabs.component';
     ContactsComponent,
     NotesComponent,
     DesignComponent,
-    TabsComponent
+    TabsComponent,
+    AspectComponent
   ],
   imports: [
     CommonModule,

@@ -4,7 +4,7 @@
   grid-template-rows: 0.25fr 1fr 5rem 1fr 0.25fr;
   align-content: center;
 
-  background-color: var(--color-tint-faded);
+  background-color: var(--color-white-faded);
   color: var(--color-secondary-dark);
   border-radius: var(--round-corners);
 
@@ -42,18 +42,18 @@
 
 .section__details fa-icon {
   font-size: 3rem;
-  filter: drop-shadow(0.3rem 0 0.3rem var(--color-shadow));
+  filter: drop-shadow(2px 2px 2px var(--color-shadow));
   transition: all 0.2s;
 }
 .section__details fa-icon:hover {
   color: var(--color-primary);
   transform: scale(102%);
-  filter: drop-shadow(0.3rem 0 0.3rem var(--color-secondary-darkest-faded));
+  filter: drop-shadow(2px 2px 2px var(--color-secondary-dark-faded));
 }
 .section__details fa-icon:active {
   color: var(--color-primary);
   transform: scale(96%);
-  filter: drop-shadow(0.15rem 0 0.15rem var(--color-secondary-dark-faded));
+  filter: drop-shadow(1px 1px 1px var(--color-secondary-dark-faded));
 }
 
 .section__details--header {
@@ -141,7 +141,7 @@
 }
 
 .section__details--main-notes {
-  background-color: var(--color-primary-faded);
+  background-color: var(--color-primary);
   color: var(--color-white);
 }
 
@@ -184,6 +184,7 @@
   grid-column: 2/-2;
   grid-row: 3/4;
   align-content: start;
+  height: 100%;
 }
 
 .section__details--save {

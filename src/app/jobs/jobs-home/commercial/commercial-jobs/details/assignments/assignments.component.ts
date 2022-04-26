@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,12 +8,21 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class AssignmentsComponent implements OnInit {
   @Input() currentJob: any;
+  @ViewChild('aspectSelect', {static: false}) aspectSelect: any;
 
   faCirclePlus = faCirclePlus;
+
+  aspectAssignments: any = [];
+  aspect = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClick(e: any) {
+    this.aspect = this.aspectSelect.nativeElement.value;
+    this.aspectAssignments.push(this.aspect)
+    console.log();
+  }
 }

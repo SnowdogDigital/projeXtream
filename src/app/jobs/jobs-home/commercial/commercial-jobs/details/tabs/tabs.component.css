@@ -32,6 +32,15 @@
   transform: scale(102%);
 }
 
+.details__tabs {
+  margin-top: 2rem;
+  border-right: 2px solid var(--color-primary-dark);
+  border-left: 2px solid var(--color-primary-dark);
+  border-radius: var(--round-corners);
+  min-height: 30vh;
+  /* background-color: var(--color-red); */
+}
+
 .active {
   color: var(--color-primary-dark);
 }

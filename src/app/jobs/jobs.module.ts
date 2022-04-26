@@ -8,7 +8,7 @@ import { JobsHomeComponent } from './jobs-home/jobs-home.component';
 
 @NgModule({
   declarations: [
-    JobsHomeComponent
+    JobsHomeComponent,
   ],
   imports: [
     CommonModule,

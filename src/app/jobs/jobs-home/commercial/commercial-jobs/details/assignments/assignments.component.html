@@ -60,68 +60,18 @@
 
 </section> -->
 
-<section id="details__assignments" class="details__assignments">
-  <div class="details__assignments--info add_task">
+<section id="assignment__add" class="assignment__add">
+  <div class="assignment__add--info add_task">
     <label for="add-assignee">ADD TASK</label>
-    <select name="add-assignee" id="add-assignee">
-      <option value="">PTH</option>
-      <option value="">DRP</option>
-      <option value="">UGD</option>
-      <option value="">AER</option>
-      <option value="">SPL</option>
+    <select #aspectSelect name="add-assignee" id="add-assignee">
+      <option value="PTH">PTH</option>
+      <option value="DRP">DRP</option>
+      <option value="UGD">UGD</option>
+      <option value="AER">AER</option>
+      <option value="SPL">SPL</option>
+      <option value="WKO">WKO</option>
     </select>
-    <fa-icon [icon]="faCirclePlus"></fa-icon>
+    <fa-icon [icon]="faCirclePlus" (click)="onClick($event)"></fa-icon>
   </div>
-  <div class="info__group">
-    <i class="fa-solid fa-square-minus icon"></i>
-    <div class="details__assignments--info">
-      <label for="aerial-assignee">AERIAL ASSIGNEE</label>
-      <select id="aerial-assignee" class="details__assignments--info_field">
-        <option value="" selected>A-Team</option>
-      </select>
-    </div>
-    <div class="details__assignments--info">
-      <label for="date-m6-eis">Aerial ECD</label>
-      <input type="date" id="date-m6-eis" class="details__assignments--info_input">
-    </div>
-    <div class="details__assignments--info">
-      <label for="date-asr_psr-complete">Aerial Complete</label>
-      <input type="date" id="date-asr_psr-complete" class="details__assignments--info_input">
-    </div>
-  </div>
-  <div class="info__group hidden">
-    <i class="fa-solid fa-square-minus icon"></i>
-    <div class="details__assignments--info">
-      <label for="build-assignee">UG ASSIGNEE</label>
-      <select id="build-assignee" class="details__assignments--info_field">
-        <option value="" selected hidden></option>
-      </select>
-    </div>
-    <div class="details__assignments--info">
-      <label for="date-m6-eis">UG ECD</label>
-      <input type="date" id="date-m6-eis" class="details__assignments--info_input">
-    </div>
-    <div class="details__assignments--info">
-      <label for="date-asr_psr-complete">UG Complete</label>
-      <input type="date" id="date-asr_psr-complete" class="details__assignments--info_input">
-    </div>
-  </div>
-  <div class="info__group">
-    <i class="fa-solid fa-square-minus icon"></i>
-    <div class="details__assignments--info">
-      <label for="splice-assignee">SPLICE ASSIGNEE</label>
-      <select id="splice-assignee" class="details__assignments--info_field">
-        <option value="" selected>Lewis Jahns</option>
-      </select>
-    </div>
-    <div class="details__assignments--info">
-      <label for="date-m6-eis">Splice ECD</label>
-      <input type="date" id="date-m6-eis" class="details__assignments--info_input">
-    </div>
-    <div class="details__assignments--info">
-      <label for="date-asr_psr-complete">Splice Complete</label>
-      <input type="date" id="date-asr_psr-complete" class="details__assignments--info_input">
-    </div>
-  </div>
-
+  <app-aspect *ngFor="let aspect of aspectAssignments" [aspect]="aspect"></app-aspect>
 </section>
