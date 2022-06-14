@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-permits',
@@ -7,11 +7,21 @@ import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./permits.component.css']
 })
 export class PermitsComponent implements OnInit {
-  faFilePdf = faFilePdf;
+  @ViewChild('permitSelect', {static: false}) permitSelect: any;
+
+  faCirclePlus = faCirclePlus;
+
+  permits: any = [];
+  permit = '';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(e: any) {
+    this.permit = this.permitSelect.nativeElement.value;
+    this.permits.push(this.permit)
   }
 
 }

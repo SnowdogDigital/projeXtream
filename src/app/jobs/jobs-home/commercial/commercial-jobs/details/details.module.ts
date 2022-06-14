@@ -11,6 +11,7 @@ import { NotesComponent } from './notes/notes.component';
 import { DesignComponent } from './design/design.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { AspectComponent } from './assignments/aspect/aspect.component';
+import { PermitInfoComponent } from './permits/permit-info/permit-info.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AspectComponent } from './assignments/aspect/aspect.component';
     NotesComponent,
     DesignComponent,
     TabsComponent,
-    AspectComponent
+    AspectComponent,
+    PermitInfoComponent,
   ],
   imports: [
     CommonModule,

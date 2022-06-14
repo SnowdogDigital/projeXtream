@@ -1,12 +1,12 @@
 .details__contacts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
   padding: .5rem;
 }
 
+.details__contacts--main-info,
 .details__contacts--customer-info,
 .details__contacts--lcon-info {
   display: flex;
@@ -14,18 +14,25 @@
   
 }
 
+/* #engineerDiv,
+#engMgrDiv,
+#constMgrDiv {
+  
+} */
+
 #customerNameDiv {
   grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 #enterpriseCityDiv,
 #enterpriseNewMrcDiv, 
 #enterpriseNetNrrDiv {
-  grid-row: 2/3;
+  grid-row: 3/4;
 }
 
 #wholesaleCustomerNameDiv,
 #wholesaleWipMrcDiv,
 #wholesaleWipNrcDiv {
-  grid-row: 3/4;
+  grid-row: 4/5;
 }

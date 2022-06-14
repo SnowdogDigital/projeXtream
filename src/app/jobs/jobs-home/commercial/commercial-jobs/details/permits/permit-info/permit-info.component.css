@@ -1,38 +1,40 @@
-.details__permits {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  min-height: 35rem;
-}
-
-.details__permits--add {
+.permit__info {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: .5rem;
   margin-left: 3rem;
-  margin-right: 3rem;
-  padding: var(--default-padding-margin);
+  padding: .5rem;
   border-radius: var(--round-corners);
   border-right: 2px solid var(--color-primary-dark);
   border-left: 2px solid var(--color-primary-dark);
 }
 
-.details__permits--add fa-icon {
+.permit__info--label:not(first-child) {
+  color: var(--color-secondary);
+  background-color: var(--color-white-faded);
+}
+
+.permit__info input {
+  width: 100%;
+}
+
+.permit__info--group {
+  display: flex;
+  flex-direction: column;
+}
+
+.permit__info--group fa-icon {
   align-self: center;
-  margin-top: .25rem;
   font-size: 2.5rem;
   filter: drop-shadow(2px 2px 2px var(--color-shadow));
   transition: all 0.2s;
 }
-.details__permits--add fa-icon:hover {
+.permit__info--group fa-icon:hover {
   color: var(--color-primary);
   transform: scale(101%);
   filter: drop-shadow(2px 2px 2px var(--color-secondary-dark-faded));
 }
-.details__permits--add fa-icon:active {
+.permit__info--group fa-icon:active {
   color: var(--color-primary);
   transform: scale(96%);
   filter: drop-shadow(1px 1px 1px var(--color-secondary-dark-faded));

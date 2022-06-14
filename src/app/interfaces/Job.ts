@@ -15,7 +15,7 @@ export interface Job {
   engineer: string,
   eng_mgr: string,
   const_mgr: string,
-  alphanumeric: string,
+  clli: string,
   lat_lng: string,
   state: string,
   exchange: string,

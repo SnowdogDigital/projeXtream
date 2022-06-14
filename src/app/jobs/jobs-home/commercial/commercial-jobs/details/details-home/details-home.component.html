@@ -1,4 +1,4 @@
-<!-- <main id="section__details" class="section__details " name="details">
+<main id="section__details" class="section__details " name="details">
   <section class="section__details--header">
     <div class="section__details--header-heading">
       <h3>{{ currentJob.order_no }} : {{ statuses[currentJob.status - 1].name }}</h3>
@@ -66,6 +66,11 @@
       <span id="prod" class="section__details--main-info_field">{{ currentJob.prod }}
       </span>
     </div>
+    <div id="customerDiv" class="section__details--main-info">
+      <label for="customer">CUSTOMER</label>
+      <span id="customer" class="section__details--main-info_field">{{ currentJob.customer_name }}
+      </span>
+    </div>
     <div id="latLongDiv" class="section__details--main-info">
       <label for="latLong">LAT. & LONG.</label>
       <span id="latLong" class="section__details--main-info_field">{{ currentJob.lat_lng }}
@@ -118,22 +123,6 @@
       <label for="">NOTES</label>
       <button (click)="toggleNotes($event)" id="jobComments" class="section__details--main-notes btn">View</button>
     </div>
-    <br>
-    <div id="engineerDiv" class="section__details--main-info">
-      <label for="engineer">Engineer</label>
-      <span id="engineer" class="section__details--main-info_field">{{ currentJob.engineer }}
-      </span>
-    </div>
-    <div id="engMgrDiv" class="section__details--main-info">
-      <label for="engMgr">ENG MGR</label>
-      <span id="engMgr" class="section__details--main-info_field">{{ currentJob.eng_mgr }}
-      </span>
-    </div>
-    <div id="constMgrDiv" class="section__details--main-info">
-      <label for="constMgr">CONST MGR</label>
-      <span id="constMgr" class="section__details--main-info_field">{{ currentJob.const_mgr }}
-      </span>
-    </div>
   </section>
   <section class="section__details--previous">
     <fa-icon [icon]="faCircleLeft" (click)="onClickPrev()"></fa-icon>
@@ -163,9 +152,9 @@
     </div>
   </section>
 </main>
-<app-notes [ngClass]="{hidden: this.hidden === true}"></app-notes> -->
+<app-notes [ngClass]="{hidden: this.hidden === true}"></app-notes>
 
-<main id="section__details" class="section__details " name="details">
+<!-- <main id="section__details" class="section__details " name="details">
   <section class="section__details--header">
     <div class="section__details--header-heading">
       <h3>order_no : status </h3>
@@ -233,11 +222,6 @@
       <span id="prod" class="section__details--main-info_field">data
       </span>
     </div>
-    <!-- <div id="clliCodeDiv" class="section__details--main-info">
-      <label for="clliCode">CLLI CODE</label>
-      <span id="clliCode" class="section__details--main-info_field">data
-      </span>
-    </div> -->
     <div id="latLongDiv" class="section__details--main-info">
       <label for="latLong">LAT. & LONG.</label>
       <span id="latLong" class="section__details--main-info_field">data
@@ -289,22 +273,6 @@
       <label for="">NOTES</label>
       <button (click)="toggleNotes($event)" id="jobComments" class="section__details--main-notes btn">View</button>
     </div>
-    <!-- <br>
-    <div id="engineerDiv" class="section__details--main-info">
-      <label for="engineer">Engineer</label>
-      <span id="engineer" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="engMgrDiv" class="section__details--main-info">
-      <label for="engMgr">ENG MGR</label>
-      <span id="engMgr" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="constMgrDiv" class="section__details--main-info">
-      <label for="constMgr">CONST MGR</label>
-      <span id="constMgr" class="section__details--main-info_field">data
-      </span>
-    </div> -->
   </section>
   <section class="section__details--previous">
     <fa-icon [icon]="faCircleLeft" (click)="onClickPrev()"></fa-icon>
@@ -314,14 +282,10 @@
   <section class="section__details--next">
     <fa-icon [icon]="faCircleRight" (click)="onClickNext()"></fa-icon>
   </section>
-  <!-- <div class="section__details--spacer-top"></div>
-  <section class="section__details--dates">
-  </section>
-  <div class="section__details--spacer-btm"></div> -->
   <section class="section__details--save">
     <div class="section__details--save-changes">
       <button id="section__details-btn" class="btn section__details--save-changes_btn" disabled>Save Changes</button>
     </div>
   </section>
 </main>
-<app-notes [ngClass]="{hidden: this.hidden === true}"></app-notes>
+<app-notes [ngClass]="{hidden: this.hidden === true}"></app-notes> -->

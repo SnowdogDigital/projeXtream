@@ -127,7 +127,7 @@ fa-icon {
 }
 
 span {
-  background-color: var(--color-white);
+  background-color: var(--color-white-faded);
   color: var(--color-black);
   border: 1px solid var(--color-black);
   text-align: center;
@@ -139,8 +139,8 @@ span {
 }
 
 label {
-  background-color: var(--color-white-faded);
-  color: var(--color-secondary-dark);
+  color: var(--color-white);
+  background-color: var(--color-secondary-faded);
   padding: 0 0.3rem;
   margin-bottom: 0.3rem;
   text-align: center;
@@ -156,7 +156,7 @@ input {
 
 input,
 select {
-  background-color: var(--color-white-tint);
+  background-color: var(--color-white-faded);
   color: var(--color-black);
   height: 3rem;
   text-align: center;

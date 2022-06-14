@@ -131,8 +131,10 @@
 .section__details--main-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
+  
 }
 @media only screen and (max-width: var(--bp-18)) {
   .section__details--main-info {

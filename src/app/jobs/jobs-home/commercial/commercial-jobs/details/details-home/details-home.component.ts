@@ -12,8 +12,6 @@ import { StatusesService } from '../../../../../../services/statuses.service';
   styleUrls: ['./details-home.component.css']
 })
 export class DetailsHomeComponent implements OnInit {
-  @Input() currentJob: any;
-
   faCircleLeft = faCircleLeft;
   faCircleRight = faCircleRight;
   faCirclePlus = faCirclePlus;
@@ -21,6 +19,8 @@ export class DetailsHomeComponent implements OnInit {
   faMap = faMap;
   faSquareXmark = faSquareXmark;
 
+  selectedJobId = 1;
+  currentJob: any = {};
   hidden = true;
   jobs: Job[] = [];
   statuses: Status[] = [];
@@ -29,15 +29,18 @@ export class DetailsHomeComponent implements OnInit {
   
   ngOnInit(): void {
     this.statuses = this.statusesService.getStatuses();
+    this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    console.log(this.currentJob);
+
   }
 
   onClickPrev() {
-    this.jobs = this.jobsService.getJobs();
-    this.currentJob = this.jobs[this.currentJob.id - 2];
+    this.selectedJobId = this.selectedJobId - 1;
+    this.currentJob = this.jobsService.getJob(this.selectedJobId);
   }
   onClickNext() {
-    this.jobs = this.jobsService.getJobs();
-    this.currentJob = this.jobs[this.currentJob.id + 1];
+    this.selectedJobId = this.selectedJobId + 1;
+    this.currentJob = this.jobsService.getJob(this.selectedJobId);
   }
   
 

@@ -14,17 +14,15 @@ import { StatusesService } from '../../../../services/statuses.service';
   styleUrls: ['./commercial-jobs.component.css']
 })
 export class CommercialJobsComponent implements OnInit {
-  @Output() currentJob = {};
+  // @Output() selectedJobId: number;
   faFilter = faFilter;
   faDownload = faDownload;
   faUpload = faUpload;
   
   jobs: Job[] = [];
   statuses: Status[] = [];
-  
   selectedJobId = 0;
   statusIndex = 0;
-  tableHidden = false;
   detailsHidden = true;
 
   constructor(private jobsService: JobsService, private statusesService: StatusesService) {}
@@ -47,18 +45,15 @@ export class CommercialJobsComponent implements OnInit {
     if (e.target.id) {
       this.selectedJobId = parseInt(e.target.id);
       this.detailsHidden = false;
-      this.tableHidden = true;
-      this.currentJob = this.jobsService.getJob(this.selectedJobId);
-      console.log(this.tableHidden, this.currentJob);
+      console.log(this.selectedJobId);
     }
   }
   
   onClickChild(e: any, job: any) {
     this.selectedJobId = parseInt(e.target.parentNode.id);
-    this.tableHidden = true;
     this.detailsHidden = false;
-    this.currentJob = this.jobsService.getJob(this.selectedJobId);
-    console.log(this.tableHidden, this.currentJob);
+    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    console.log(this.selectedJobId);
   }
 
 }

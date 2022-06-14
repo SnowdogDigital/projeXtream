@@ -1,53 +1,18 @@
 <section class="details__permits">
-  <div class="details__permits--group">
-    <div class="details__permits--group-info">
-      <label for="jeopType">Permit required</label>
-      <select id="jeopType">
-        <option value="yes" selected>Yes</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-    <div class="details__permits--group-info">
-      <label for="jeopReason">Permit rcvd</label>
-      <input type="date" id="jeopReason" value="2022-03-16">
-    </div>
-    <div class="details__permits--group-info">
-      <label for="jeopDescription">Permit</label>
-      <fa-icon [icon]="faFilePdf"></fa-icon>
-    </div>
+  <div class="details__permits--add">
+    <label for="addPermit">Add Permit</label>
+    <select #permitSelect id="addPermit">
+      <option value="City">City</option>
+      <option value="County">County</option>
+      <option value="State">State</option>
+      <option value="DOT">DOT</option>
+      <option value="TCP">TCP</option>
+      <option value="JPA">JPA</option>
+      <option value="AA">AA</option>
+      <option value="811">811</option>
+      <option value="JU">JU</option>
+    </select>
+    <fa-icon [icon]="faCirclePlus" (click)="onClick($event)"></fa-icon>
   </div>
-  <div class="details__permits--group">
-    <div class="details__permits--group-info">
-      <label for="jeopType">DIG TICKET REQUIRED</label>
-      <select id="jeopType">
-        <option value="yes">Yes</option>
-        <option value="no" selected>No</option>
-      </select>
-    </div>
-    <div class="details__permits--group-info hidden">
-      <label for="jeopReason">Dig Ticket rcvd</label>
-      <input type="date" id="jeopReason">
-    </div>
-    <div class="details__permits--group-info hidden">
-      <label for="jeopDescription">Dig Ticket</label>
-      <fa-icon [icon]="faFilePdf"></fa-icon>
-    </div>
-  </div>
-  <div class="details__permits--group">
-    <div class="details__permits--group-info">
-      <label for="jeopType">TCP REQUIRED</label>
-      <select id="jeopType">
-        <option value="yes" selected>Yes</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-    <div class="details__permits--group-info">
-      <label for="jeopReason">TCP rcvd</label>
-      <input type="date" id="jeopReason" value="2022-03-15">
-    </div>
-    <div class="details__permits--group-info">
-      <label for="jeopDescription">TCP</label>
-      <fa-icon [icon]="faFilePdf"></fa-icon>
-    </div>
-  </div>
+  <app-permit-info *ngFor="let permit of permits" [permit]="permit"></app-permit-info>
 </section>
