@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { faFilter, faDownload, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
 
 
 import { Job } from '../../../../interfaces/Job';
@@ -25,7 +26,7 @@ export class CommercialJobsComponent implements OnInit {
   statusIndex = 0;
   detailsHidden = true;
 
-  constructor(private jobsService: JobsService, private statusesService: StatusesService) {}
+  constructor(private store: Store, private jobsService: JobsService, private statusesService: StatusesService) {}
 
   ngOnInit(): void {
     //! PRODUCTION VERSION
