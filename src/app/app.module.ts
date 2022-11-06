@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fontawesome-platform/fontawesome'; 
 import { NgChartsModule } from 'ng2-charts';
 import { StoreModule } from '@ngrx/store';
 
