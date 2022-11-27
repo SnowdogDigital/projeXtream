@@ -5,8 +5,8 @@
         <a routerLink="import">
           <fa-icon [icon]="faUpload" class="section__jobs--list-heading_action-btn btn import"></fa-icon>
         </a>
-        <!-- <p id="jobCount">Displaying {{ jobs.length }} Jobs</p> -->
-        <p *ngIf="hasJobs$" id="jobCount">Displaying SELECTED Jobs</p>
+        <p id="jobCount">Displaying {{ jobs$ }} Jobs</p>
+        <!-- <p *ngIf="hasJobs$" id="jobCount">Displaying SELECTED Jobs</p> -->
         <div class="section__jobs--list-heading_action-group">
           <a routerLink="filter">
             <fa-icon id="jobsFilterIcon" [icon]="faFilter" class="section__jobs--list-heading_action-btn btn"
@@ -30,7 +30,7 @@
       </div>
     </div>
     <ul class="section__jobs--list-rows">
-      <li *ngFor="let job of jobs" id="{{ job.id }}" routerLink="details" class="section__jobs--list-rows_job"
+      <li *ngFor="let job of jobs$ | async" id="{{ job.id }}" routerLink="details" class="section__jobs--list-rows_job"
         (click)="onClickParent($event, job)" [ngClass]="{selected: job.id === selectedJobId}">
         <div (click)="onClickChild($event, job)" routerLink="details">{{ job.state }}</div>
         <div (click)="onClickChild($event, job)" routerLink="details">{{ job.exchange }}</div>

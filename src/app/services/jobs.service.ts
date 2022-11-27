@@ -9,21 +9,26 @@ import { JOBS } from '../collections/jobs-collection';
 })
 export class JobsService {
   //! PRODUCTION VERSION
-  // private apiUrl = 'http://localhost:3000/jobs'
+  private apiUrl = 'http://localhost:3000/jobs'
   
-  // constructor(private host: HttpClient) { }
+  constructor(private host: HttpClient) { }
   
-  // getJobs(): Observable<Job[]> {
-  //   return this.host.get<Job[]>(this.apiUrl);
+  getJobs(): Observable<Job[]> {
+    return this.host.get<Job[]>(this.apiUrl);
+  }
+
+  getJob(id: number): Observable<Job> {
+      return this.host.get<Job>(`${this.apiUrl}/${id}`);
+
+  //? DEMO VERSION
+  // constructor() {}
+  // getJobs(): Job[] {
+  //   return JOBS;
   // }
 
-  constructor() {}
-  getJobs(): Job[] {
-    return JOBS;
-  }
+  // getJob(id: number): any {
+  //   return JOBS.find(j => j.id === id);
+  // }
 
-  getJob(id: number): any {
-    return JOBS.find(j => j.id === id);
-  }
-
+}
 }

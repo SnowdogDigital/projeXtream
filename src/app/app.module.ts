@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
 import { NgChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { JobEffects } from './store/jobs-table-effects';
+import { EffectsModule } from '@ngrx/effects';
 import { environment } from 'src/environments/environment';
 
 
@@ -21,10 +24,12 @@ import { jobsReducer } from './store/jobs-table-reducers';
     AppRoutingModule,
     FontAwesomeModule,
     NgChartsModule,
+    HttpClientModule,
     StoreModule.forRoot({jobsReducer}),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),
+    EffectsModule.forRoot([JobEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

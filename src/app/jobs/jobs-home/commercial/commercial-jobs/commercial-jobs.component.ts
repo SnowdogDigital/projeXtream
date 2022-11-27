@@ -3,7 +3,7 @@ import { faFilter, faDownload, faUpload } from '@fortawesome/free-solid-svg-icon
 import { Store, select } from '@ngrx/store';
 import { loadTable } from 'src/app/store/jobs-table-actions';
 import { jobSelector } from 'src/app/store/jobs-table-selectors';
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 
 import { Job } from '../../../../interfaces/Job';
 import { Status } from '../../../../interfaces/Status';
@@ -22,21 +22,20 @@ export class CommercialJobsComponent implements OnInit {
   faDownload = faDownload;
   faUpload = faUpload;
   
-  jobs: Job[] = [];
+  jobs$: Observable<Job[]>; 
   statuses: Status[] = [];
   selectedJobId = 0;
   statusIndex = 0;
   detailsHidden = true;
-  hasJobs$: Observable<boolean> | undefined;
 
-  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService) {}
+  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService) {
+    this.jobs$ = this.store.select(jobSelector);
+  }
 
   ngOnInit(): void {
     //* NGRX VERSION
     this.store.dispatch(loadTable());
-    this.hasJobs$ = this.store.pipe(select(jobSelector));
-    console.log("dispatched loadTable");
-    console.log(this.store);
+    console.log(this.store.select(jobSelector));
 
     //! PRODUCTION VERSION
     // this.jobsService.getJobs().subscribe((jobs) => (this.jobs = jobs));
