@@ -27,7 +27,7 @@ export class CommercialJobsComponent implements OnInit {
   selectedJobId = 0;
   statusIndex = 0;
   detailsHidden = true;
-  hasJobs$: Observable<boolean>;
+  hasJobs$: Observable<boolean> | undefined;
 
   constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService) {}
 
