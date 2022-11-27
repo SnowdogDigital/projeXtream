@@ -5,7 +5,8 @@
         <a routerLink="import">
           <fa-icon [icon]="faUpload" class="section__jobs--list-heading_action-btn btn import"></fa-icon>
         </a>
-        <p id="jobCount">Displaying {{ jobs.length }} Jobs</p>
+        <!-- <p id="jobCount">Displaying {{ jobs.length }} Jobs</p> -->
+        <p *ngIf="hasJobs" id="jobCount">Displaying SELECTED Jobs</p>
         <div class="section__jobs--list-heading_action-group">
           <a routerLink="filter">
             <fa-icon id="jobsFilterIcon" [icon]="faFilter" class="section__jobs--list-heading_action-btn btn"
