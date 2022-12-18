@@ -5,7 +5,7 @@
         <a routerLink="import">
           <fa-icon [icon]="faUpload" class="section__jobs--list-heading_action-btn btn import"></fa-icon>
         </a>
-        <p id="jobCount">Displaying {{ jobs$ }} Jobs</p>
+        <p id="jobCount">Displaying {{ (jobs$ | async)?.length }} Jobs</p>
         <!-- <p *ngIf="hasJobs$" id="jobCount">Displaying SELECTED Jobs</p> -->
         <div class="section__jobs--list-heading_action-group">
           <a routerLink="filter">
@@ -40,7 +40,8 @@
         <div (click)="onClickChild($event, job)" routerLink="details">{{ job.due_date }}</div>
         <div (click)="onClickChild($event, job)" routerLink="details">{{ job.age }}</div>
         <div (click)="onClickChild($event, job)" routerLink="details">{{ job.aerial_assignee }}</div>
-        <div (click)="onClickChild($event, job)" routerLink="details">{{ statuses[job.status - 1].name }}</div>
+        <div (click)="onClickChild($event, job)" routerLink="details">{{ (statuses$ | async)?.[job.status - 1]?.name }}
+        </div>
       </li>
     </ul>
   </section>

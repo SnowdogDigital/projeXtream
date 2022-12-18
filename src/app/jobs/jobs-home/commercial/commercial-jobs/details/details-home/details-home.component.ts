@@ -28,7 +28,7 @@ export class DetailsHomeComponent implements OnInit {
   constructor(private jobsService: JobsService, private statusesService: StatusesService) {}
   
   ngOnInit(): void {
-    this.statuses = this.statusesService.getStatuses();
+    // this.statuses = this.statusesService.getStatuses();
     this.currentJob = this.jobsService.getJob(this.selectedJobId);
     console.log(this.currentJob);
 

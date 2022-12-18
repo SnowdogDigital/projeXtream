@@ -37,7 +37,7 @@ export class JobsHomeComponent implements OnInit {
     //? DEMO VERSION
     // this.jobs = this.jobsService.getJobs();
     // this.reviewGroups = this.reviewGroupsService.getReviewGroups();
-    this.statuses = this.statusesService.getStatuses();
+    // this.statuses = this.statusesService.getStatuses();
     // this.subStatuses = this.subStatusesService.getSubStatuses();
   }
 
