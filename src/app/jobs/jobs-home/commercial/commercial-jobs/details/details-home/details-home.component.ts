@@ -6,6 +6,11 @@ import { Status } from '../../../../../../interfaces/Status';
 import { JobsService } from '../../../../../../services/jobs.service';
 import { StatusesService } from '../../../../../../services/statuses.service';
 
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectJobById } from 'src/app/store/jobs-table-selectors';
+
 @Component({
   selector: 'app-details-home',
   templateUrl: './details-home.component.html',
@@ -19,28 +24,33 @@ export class DetailsHomeComponent implements OnInit {
   faMap = faMap;
   faSquareXmark = faSquareXmark;
 
-  selectedJobId = 1;
   currentJob: any = {};
   hidden = true;
-  jobs: Job[] = [];
-  statuses: Status[] = [];
+  // selectedJobId = 0;
+  job$: Observable<Job>;
+  statuses$: Observable<Status[]>;
   
-  constructor(private jobsService: JobsService, private statusesService: StatusesService) {}
+  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
+  }
   
   ngOnInit(): void {
     // this.statuses = this.statusesService.getStatuses();
-    this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    const getId = this.route.snapshot.paramMap.get('id');
+    const jobId = Number.parseInt(getId);
+    this.currentJob = this.store.select(selectJobById(jobId));
+    console.log(jobId);
     console.log(this.currentJob);
 
   }
 
   onClickPrev() {
-    this.selectedJobId = this.selectedJobId - 1;
-    this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    // this.selectedJobId = this.selectedJobId - 1;
+    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
   }
   onClickNext() {
-    this.selectedJobId = this.selectedJobId + 1;
-    this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    // this.selectedJobId = this.selectedJobId + 1;
+    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
   }
   
 

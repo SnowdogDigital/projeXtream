@@ -8,8 +8,8 @@ import { DesignComponent } from './design/design.component';
 import { PermitsComponent } from './permits/permits.component';
 
 const routes: Routes = [
-  {path: '', component: DetailsHomeComponent, children: [
-    {path: '', component: AssignmentsComponent},
+  {path: ':id', component: DetailsHomeComponent, children: [
+    {path: ':id', component: AssignmentsComponent},
     {path: 'contacts', component: ContactsComponent},
     {path: 'design', component: DesignComponent},
     {path: 'permits', component: PermitsComponent}

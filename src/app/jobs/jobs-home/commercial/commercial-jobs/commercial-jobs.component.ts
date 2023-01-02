@@ -1,9 +1,11 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { faFilter, faDownload, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Store, select } from '@ngrx/store';
 import { loadStatuses, loadTable } from 'src/app/store/jobs-table-actions';
 import { jobSelector, statusesSelector } from 'src/app/store/jobs-table-selectors';
-import { first, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs';
 
 import { Job } from '../../../../interfaces/Job';
 import { Status } from '../../../../interfaces/Status';
@@ -28,7 +30,7 @@ export class CommercialJobsComponent implements OnInit {
   statusIndex = 0;
   detailsHidden = true;
 
-  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService) {
+  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute) {
     this.jobs$ = this.store.select(jobSelector);
     this.statuses$ = this.store.select(statusesSelector);
   }
@@ -38,32 +40,38 @@ export class CommercialJobsComponent implements OnInit {
     this.store.dispatch(loadTable());
     this.store.dispatch(loadStatuses());
     // this.jobs$.subscribe(res=>console.log(res));
-
+    
     //! PRODUCTION VERSION
     // this.jobsService.getJobs().subscribe((jobs) => (this.jobs = jobs));
     // this.reviewGroupService.getReviewGroups().subscribe((reviewGroups) => (this.reviewGroups = reviewGroups));
     // this.statusService.getStatuses().subscribe((statuses) => (this.statuses = statuses));
     // this.subStatusService.getSubStatuses().subscribe((subStatuses) => (this.subStatuses = subStatuses));
-
+    
     //? DEMO VERSION
     // this.jobs = this.jobsService.getJobs();
     // this.reviewGroups = this.reviewGroupsService.getReviewGroups();
     // this.statuses = this.statusesService.getStatuses();
     // this.subStatuses = this.subStatusesService.getSubStatuses();
   }
-
+  
   onClickParent(e: any, job: any) {
     if (e.target.id) {
       this.selectedJobId = parseInt(e.target.id);
       this.detailsHidden = false;
       console.log(this.selectedJobId);
+      // this.jobs$ = this.route.paramMap.pipe(
+      //   switchMap(params => {
+      //     this.selectedJobId = Number(params.get('id'));
+      //     // return this.store.select(jobSelector);
+      //     // return;
+      //   })
+      //   );
     }
   }
   
   onClickChild(e: any, job: any) {
     this.selectedJobId = parseInt(e.target.parentNode.id);
     this.detailsHidden = false;
-    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
     console.log(this.selectedJobId);
   }
 

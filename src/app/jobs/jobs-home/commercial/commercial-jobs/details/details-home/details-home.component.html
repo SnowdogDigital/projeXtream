@@ -1,7 +1,7 @@
 <main id="section__details" class="section__details " name="details">
   <section class="section__details--header">
     <div class="section__details--header-heading">
-      <h3>{{ currentJob.order_no }} : {{ statuses[currentJob.status - 1].name }}</h3>
+      <h3>{{ currentJob.order_no }} : {{ (statuses$ | async)?.[currentJob.status - 1]?.name }}</h3>
     </div>
     <div class="close-modal section__details--header-close">
       <a routerLink="/jobs">
