@@ -1,7 +1,9 @@
 <main id="section__details" class="section__details " name="details">
   <section class="section__details--header">
     <div class="section__details--header-heading">
-      <h3>{{ currentJob$.order_no }} : {{ (statuses$ | async)?.[currentJob$.status - 1]?.name }}</h3>
+      <h3>{{ (currentJob$ | async)?.order_no}} : 
+        <!-- {{ (statuses$ | async)?.[(currentJob$ | async)?.status - 1]?.name }} -->
+        </h3>
     </div>
     <div class="close-modal section__details--header-close">
       <a routerLink="/jobs">
@@ -12,89 +14,89 @@
   <section class="section__details--main">
     <div class="section__details--main-info hidden">
       <label for="jobID">ID</label>
-      <span id="jobID" class="section__details--main-info_field">{{ currentJob$.id }}
+      <span id="jobID" class="section__details--main-info_field">{{ (currentJob$ | async)?.id }}
       </span>
     </div>
     <div id="dateAddedDiv" class="section__details--main-info">
       <label for="date-added">ADDED</label>
-      <input type="date" id="date-added" [value]="currentJob$.added_date" class="section__details--main-info_input">
+      <input type="date" id="date-added" [value]="(currentJob$ | async)?.added_date" class="section__details--main-info_input">
     </div>
     <div id="daysAgedDiv" class="section__details--main-info">
       <label for="days-aged">Age</label>
-      <span id="days-aged" class="section__details--main-info_field">{{ currentJob$.age }}
+      <span id="days-aged" class="section__details--main-info_field">{{ (currentJob$ | async)?.age }}
       </span>
     </div>
     <div id="eisDiv" class="section__details--main-info">
       <label for="date-eis">EIS DATE</label>
-      <input type="date" id="date-eis" [value]="currentJob$.eis_date" class="section__details--main-info_input">
+      <input type="date" id="date-eis" [value]="(currentJob$ | async)?.eis_date" class="section__details--main-info_input">
     </div>
     <div id="dueDateDiv" class="section__details--main-info">
       <label for="date-due">DUE DATE</label>
-      <input type="date" id="date-due" [value]="currentJob$.due_date" class="section__details--main-info_input">
+      <input type="date" id="date-due" [value]="(currentJob$ | async)?.due_date" class="section__details--main-info_input">
     </div>
     <div id="taskTypeDiv" class="section__details--main-info">
       <label for="taskType">ORDER TYPE</label>
-      <span id="taskType" class="section__details--main-info_field">{{ currentJob$.order_type }}
+      <span id="taskType" class="section__details--main-info_field">{{ (currentJob$ | async)?.order_type }}
       </span>
     </div>
     <div id="poDiv" class="section__details--main-info">
       <label for="po">PO #</label>
-      <span id="po" class="section__details--main-info_field">{{ currentJob$.po_no }}</span>
+      <span id="po" class="section__details--main-info_field">{{ (currentJob$ | async)?.po_no }}</span>
     </div>
     <div id="commitmentDiv" class="section__details--main-info">
       <label for="commitment">Commitment</label>
       <input id="commitment" type="text" name="commitment" placeholder="month to complete"
-        [value]="currentJob$.commitment" class="section__details--dates-info_field">
+        [value]="(currentJob$ | async)?.commitment" class="section__details--dates-info_field">
     </div>
     <div id="projectIDDiv" class="section__details--main-info">
       <label for="projectID">PROJECT ID</label>
-      <span id="projectID" class="section__details--main-info_field">{{ currentJob$.project_id }}</span>
+      <span id="projectID" class="section__details--main-info_field">{{ (currentJob$ | async)?.project_id }}</span>
     </div>
     <div id="workGroupDiv" class="section__details--main-info">
       <label for="workGroup">WORKGROUP</label>
-      <span id="workGroup" class="section__details--main-info_field">{{ currentJob$.workgroup }}
+      <span id="workGroup" class="section__details--main-info_field">{{ (currentJob$ | async)?.workgroup }}
       </span>
     </div>
     <br>
     <div id="docNoDiv" class="section__details--main-info">
       <label for="docNo">DOC #</label>
-      <span id="docNo" class="section__details--main-info_field">{{ currentJob$.doc_no }}
+      <span id="docNo" class="section__details--main-info_field">{{ (currentJob$ | async)?.doc_no }}
       </span>
     </div>
     <div id="prodDiv" class="section__details--main-info">
       <label for="prod">PROD</label>
-      <span id="prod" class="section__details--main-info_field">{{ currentJob$.prod }}
+      <span id="prod" class="section__details--main-info_field">{{ (currentJob$ | async)?.prod }}
       </span>
     </div>
     <div id="customerDiv" class="section__details--main-info">
       <label for="customer">CUSTOMER</label>
-      <span id="customer" class="section__details--main-info_field">{{ currentJob$.customer_name }}
+      <span id="customer" class="section__details--main-info_field">{{ (currentJob$ | async)?.customer_name }}
       </span>
     </div>
     <div id="latLongDiv" class="section__details--main-info">
       <label for="latLong">LAT. & LONG.</label>
-      <span id="latLong" class="section__details--main-info_field">{{ currentJob$.lat_lng }}
+      <span id="latLong" class="section__details--main-info_field">{{ (currentJob$ | async)?.lat_lng }}
       </span>
     </div>
     <div id="stateDiv" class="section__details--main-info">
       <label for="state">STATE</label>
-      <span id="state" class="section__details--main-info_field">{{ currentJob$.state }}
+      <span id="state" class="section__details--main-info_field">{{ (currentJob$ | async)?.state }}
       </span>
     </div>
     <div id="exchangeDiv" class="section__details--main-info">
       <label for="exchange">EXCHANGE</label>
-      <span id="exchange" class="section__details--main-info_field">{{ currentJob$.exchange }}
+      <span id="exchange" class="section__details--main-info_field">{{ (currentJob$ | async)?.exchange }}
       </span>
     </div>
     <div id="addressDiv" class="section__details--main-info">
       <label for="address">ADDRESS</label>
-      <span id="address">{{ currentJob$.address }}
+      <span id="address">{{ (currentJob$ | async)?.address }}
       </span>
     </div>
     <br>
     <div id="workRequiredDiv" class="section__details--main-info">
       <label for="workRequired">WORK REQUIRED</label>
-      <input id="workRequired" type="text" [value]="currentJob$.work_required"
+      <input id="workRequired" type="text" [value]="(currentJob$ | async)?.work_required"
         class="section__details--build-info_field">
     </div>
     <div id="workPrintDiv" class="section__details--main-info">

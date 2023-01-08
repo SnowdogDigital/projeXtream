@@ -14,5 +14,5 @@ export const statusesSelector = createSelector(getSelectStatus, (state: State)=>
 
 // export const getSingleJob = createFeatureSelector<State>('jobs.id');
 
-export const selectJobById = (jobId: number) => createSelector(getSelectJob, (state: State)=>state.jobs.find(j => j.id === jobId));
+export const selectJobById = (jobId: number) => createSelector(getSelectJob, (state: State)=>state.jobs.filter(j => j.id === jobId)[0]);
 

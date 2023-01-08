@@ -30,7 +30,7 @@ export class DetailsHomeComponent implements OnInit {
   // selectedJobId = 0;
   statuses$: Observable<Status[]>;
   
-  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
+  constructor(private store: Store<{jobs: Job[]}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
   }
   
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class DetailsHomeComponent implements OnInit {
     const jobId = Number.parseInt(getId!);
     this.currentJob$ = this.store.select(selectJobById(jobId));
     console.log(jobId);
-    console.log(this.currentJob$.order_no);
+    // console.log(this.currentJob$.order_no);
 
   }
 
