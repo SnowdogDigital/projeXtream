@@ -24,10 +24,10 @@ export class DetailsHomeComponent implements OnInit {
   faMap = faMap;
   faSquareXmark = faSquareXmark;
 
-  currentJob: any = {};
+  // jobs$: Observable<Job[]>; 
+  currentJob$: Observable<Job>;
   hidden = true;
   // selectedJobId = 0;
-  job$: Observable<Job>;
   statuses$: Observable<Status[]>;
   
   constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
@@ -37,10 +37,10 @@ export class DetailsHomeComponent implements OnInit {
     // this.statuses = this.statusesService.getStatuses();
     // this.currentJob = this.jobsService.getJob(this.selectedJobId);
     const getId = this.route.snapshot.paramMap.get('id');
-    const jobId = Number.parseInt(getId);
-    this.currentJob = this.store.select(selectJobById(jobId));
+    const jobId = Number.parseInt(getId!);
+    this.currentJob$ = this.store.select(selectJobById(jobId));
     console.log(jobId);
-    console.log(this.currentJob);
+    console.log(this.currentJob$.order_no);
 
   }
 

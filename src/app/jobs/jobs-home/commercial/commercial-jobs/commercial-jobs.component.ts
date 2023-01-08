@@ -54,25 +54,25 @@ export class CommercialJobsComponent implements OnInit {
     // this.subStatuses = this.subStatusesService.getSubStatuses();
   }
   
-  onClickParent(e: any, job: any) {
-    if (e.target.id) {
-      this.selectedJobId = parseInt(e.target.id);
-      this.detailsHidden = false;
-      console.log(this.selectedJobId);
-      // this.jobs$ = this.route.paramMap.pipe(
-      //   switchMap(params => {
-      //     this.selectedJobId = Number(params.get('id'));
-      //     // return this.store.select(jobSelector);
-      //     // return;
-      //   })
-      //   );
-    }
-  }
+  // onClickParent(e: any, job: any) {
+  //   if (e.target.id) {
+  //     this.selectedJobId = parseInt(e.target.id);
+  //     this.detailsHidden = false;
+  //     console.log(this.selectedJobId);
+  //     this.jobs$ = this.route.paramMap.pipe(
+  //       switchMap(params => {
+  //         this.selectedJobId = Number(params.get('id'));
+  //         return this.store.select(jobSelector);
+  //         // return;
+  //       })
+  //       );
+  //   }
+  // }
   
-  onClickChild(e: any, job: any) {
-    this.selectedJobId = parseInt(e.target.parentNode.id);
-    this.detailsHidden = false;
-    console.log(this.selectedJobId);
-  }
+  // onClickChild(e: any, job: any) {
+  //   this.selectedJobId = parseInt(e.target.parentNode.id);
+  //   this.detailsHidden = false;
+  //   console.log(this.selectedJobId);
+  // }
 
 }

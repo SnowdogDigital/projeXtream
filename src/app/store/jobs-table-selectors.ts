@@ -12,6 +12,7 @@ export const getSelectStatus = createFeatureSelector<State>('statuses');
 
 export const statusesSelector = createSelector(getSelectStatus, (state: State)=>state.statuses);
 
-export const selectJobById = (jobId: number) => createSelector(getSelectJob, (state: State) => state.jobs.find(j => j.id === jobId))
+// export const getSingleJob = createFeatureSelector<State>('jobs.id');
 
-// export const detailSelector = createSelector(getSelectDetail, (state: State)=>state.jobs.filter(job=>job.id === id));
+export const selectJobById = (jobId: number) => createSelector(getSelectJob, (state: State)=>state.jobs.find(j => j.id === jobId));
+

@@ -30,19 +30,18 @@
       </div>
     </div>
     <ul class="section__jobs--list-rows">
-      <li *ngFor="let job of jobs$ | async" id="{{ job.id }}" [routerLink]="['details', selectedJobId]"
-        class="section__jobs--list-rows_job" (click)="onClickParent($event, job)"
-        [ngClass]="{selected: job.id === selectedJobId}">
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.state }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.exchange }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.address }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.customer_name }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.order_no }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.due_date }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.age }}</div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ job.aerial_assignee }}
+      <li *ngFor="let job of jobs$ | async" id="{{ job.id }}" [routerLink]="['details', job.id]"
+        class="section__jobs--list-rows_job" [ngClass]="{selected: job.id === selectedJobId}">
+        <div [routerLink]="['details', job.id]">{{ job.state }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.exchange }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.address }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.customer_name }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.order_no }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.due_date }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.age }}</div>
+        <div [routerLink]="['details', job.id]">{{ job.aerial_assignee }}
         </div>
-        <div (click)="onClickChild($event, job)" [routerLink]="['details', selectedJobId]">{{ (statuses$ |
+        <div [routerLink]="['details', selectedJobId]">{{ (statuses$ |
           async)?.[job.status - 1]?.name }}
         </div>
       </li>
