@@ -1,9 +1,9 @@
 <main id="section__details" class="section__details " name="details">
   <section class="section__details--header">
     <div class="section__details--header-heading">
-      <h3>{{ (currentJob$ | async)?.order_no}} : 
+      <h3>{{ (currentJob$ | async)?.order_no}} :
         <!-- {{ (statuses$ | async)?.[(currentJob$ | async)?.status - 1]?.name }} -->
-        </h3>
+      </h3>
     </div>
     <div class="close-modal section__details--header-close">
       <a routerLink="/jobs">
@@ -19,7 +19,8 @@
     </div>
     <div id="dateAddedDiv" class="section__details--main-info">
       <label for="date-added">ADDED</label>
-      <input type="date" id="date-added" [value]="(currentJob$ | async)?.added_date" class="section__details--main-info_input">
+      <input type="date" id="date-added" [value]="(currentJob$ | async)?.added_date"
+        class="section__details--main-info_input">
     </div>
     <div id="daysAgedDiv" class="section__details--main-info">
       <label for="days-aged">Age</label>
@@ -28,11 +29,13 @@
     </div>
     <div id="eisDiv" class="section__details--main-info">
       <label for="date-eis">EIS DATE</label>
-      <input type="date" id="date-eis" [value]="(currentJob$ | async)?.eis_date" class="section__details--main-info_input">
+      <input type="date" id="date-eis" [value]="(currentJob$ | async)?.eis_date"
+        class="section__details--main-info_input">
     </div>
     <div id="dueDateDiv" class="section__details--main-info">
       <label for="date-due">DUE DATE</label>
-      <input type="date" id="date-due" [value]="(currentJob$ | async)?.due_date" class="section__details--main-info_input">
+      <input type="date" id="date-due" [value]="(currentJob$ | async)?.due_date"
+        class="section__details--main-info_input">
     </div>
     <div id="taskTypeDiv" class="section__details--main-info">
       <label for="taskType">ORDER TYPE</label>
