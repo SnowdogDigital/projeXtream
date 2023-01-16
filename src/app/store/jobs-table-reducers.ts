@@ -15,3 +15,6 @@ export const statusesReducer = createReducer(
   initialState,
   on(loadStatusesSuccess, (state, props) => ({...state, statuses: props.statuses}))
 );
+
+
+//reducer for        selectedJob: state.jobs.filter(job => job.id === jobId)

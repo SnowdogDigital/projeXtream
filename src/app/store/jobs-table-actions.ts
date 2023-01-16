@@ -9,3 +9,5 @@ export const loadJobsSuccess = createAction('[Commercial Jobs API] Jobs Load Suc
 export const loadStatuses = createAction('[Commercial Component] Load Statuses');
 
 export const loadStatusesSuccess = createAction('[Statuses API] Load Statuses Success', props<{ statuses: Status[] }>());
+
+// action for clicking table row to select job id

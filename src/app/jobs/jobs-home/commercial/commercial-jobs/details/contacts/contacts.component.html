@@ -55,63 +55,64 @@
 <section class="details__contacts">
   <div id="engineerDiv" class="details__contacts--main-info">
     <label for="engineer">Engineer</label>
-    <span id="engineer" class="details__contacts--main-info_field">{{ currentJob.engineer }}
+    <span id="engineer" class="details__contacts--main-info_field">{{ (currentJob$ | async)?.engineer }}
     </span>
   </div>
   <div id="engMgrDiv" class="details__contacts--main-info">
     <label for="engMgr">ENG MGR</label>
-    <span id="engMgr" class="details__contacts--main-info_field">{{ currentJob.engineer }}
+    <span id="engMgr" class="details__contacts--main-info_field">{{ (currentJob$ | async)?.eng_mgr }}
+    </span>
+  </div>
+  <div id="constMgrDiv" class="details__contacts--main-info">
+    <label for="constMgr">FIELDER</label>
+    <span id="constMgr" class="details__contacts--main-info_field">{{ (currentJob$ | async)?.const_mgr }}
+    </span>
+  </div>
+  <div id="constMgrDiv" class="details__contacts--main-info">
+    <label for="constMgr">CONST SUP</label>
+    <span id="constMgr" class="details__contacts--main-info_field">{{ (currentJob$ | async)?.const_mgr }}
     </span>
   </div>
   <div id="constMgrDiv" class="details__contacts--main-info">
     <label for="constMgr">CONST MGR</label>
-    <span id="constMgr" class="details__contacts--main-info_field">{{ currentJob.engineer }}
-    </span>
-  </div>
-  <div id="constMgrDiv" class="details__contacts--main-info">
-    <label for="constMgr">CONST MGR</label>
-    <span id="constMgr" class="details__contacts--main-info_field">{{ currentJob.engineer }}
-    </span>
-  </div>
-  <div id="constMgrDiv" class="details__contacts--main-info">
-    <label for="constMgr">CONST MGR</label>
-    <span id="constMgr" class="details__contacts--main-info_field">{{ currentJob.engineer }}
+    <span id="constMgr" class="details__contacts--main-info_field">{{ (currentJob$ | async)?.const_mgr }}
     </span>
   </div>
   <div id="customerNameDiv" class="details__contacts--customer-info">
     <label for="customerName">CUSTOMER</label>
-    <span id="customerName" class="details__contacts--customer-info_field">{{ currentJob.engineer }}
+    <span id="customerName" class="details__contacts--customer-info_field">{{ (currentJob$ | async)?.customer_name }}
     </span>
   </div>
   <div id="enterpriseCityDiv" class="details__contacts--customer-info">
     <label for="enterpriseCity">CONTACT NAME</label>
-    <span id="enterpriseCity" class="details__contacts--customer-info_field">{{ currentJob.engineer }}
+    <span id="enterpriseCity" class="details__contacts--customer-info_field">{{ (currentJob$ | async)?.contact_name }}
     </span>
   </div>
   <div id="enterpriseNewMrcDiv" class="details__contacts--customer-info">
     <label for="enterpriseNewMrc">CONTACT EMAIL</label>
-    <span id="enterpriseNewMrc" class="details__contacts--customer-info_field">{{ currentJob.engineer }}
+    <span id="enterpriseNewMrc" class="details__contacts--customer-info_field">{{ (currentJob$ | async)?.contact_email
+      }}
     </span>
   </div>
   <div id="enterpriseNetNrrDiv" class="details__contacts--customer-info">
     <label for="enterpriseNetNrr">CONTACT PHONE</label>
-    <span id="enterpriseNetNrr" class="details__contacts--customer-info_field">{{ currentJob.engineer }}
+    <span id="enterpriseNetNrr" class="details__contacts--customer-info_field">{{ (currentJob$ | async)?.contact_phone
+      }}
     </span>
   </div>
-  <br>
   <div id="wholesaleCustomerNameDiv" class="details__contacts--lcon-info">
     <label for="wholesaleCustomerName">LCON NAME</label>
-    <span id="wholesaleCustomerName" class="details__contacts--lcon-info_field">{{ currentJob.engineer }}
+    <span id="wholesaleCustomerName" class="details__contacts--lcon-info_field">{{ (currentJob$ | async)?.lcon_name }}
     </span>
   </div>
   <div id="wholesaleWipMrcDiv" class="details__contacts--lcon-info">
     <label for="wholesaleWipMrc">LCON EMAIL</label>
-    <span id="wholesaleWipMrc" class="details__contacts--lcon-info_field">{{ currentJob.engineer }}
+    <span id="wholesaleWipMrc" class="details__contacts--lcon-info_field">{{ (currentJob$ | async)?.lcon_phone }}
     </span>
   </div>
   <div id="wholesaleWipNrcDiv" class="details__contacts--lcon-info">
     <label for="wholesaleWipNrc">LCON PHONE</label>
-    <span id="wholesaleWipNrc" class="details__contacts--lcon-info_field">{{ currentJob.engineer }}
+    <span id="wholesaleWipNrc" class="details__contacts--lcon-info_field">{{ (currentJob$ | async)?.lcon_email }}
     </span>
   </div>
 </section>
