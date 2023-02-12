@@ -31,7 +31,8 @@
     </div>
     <ul class="section__jobs--list-rows">
       <li *ngFor="let job of jobs$ | async" id="{{ job.id }}" [routerLink]="['details', job.id]"
-        class="section__jobs--list-rows_job" [ngClass]="{selected: job.id === selectedJobId}">
+        class="section__jobs--list-rows_job" [ngClass]="{selected: job.id === selectedJobId}"
+        (click)="clickSelectedRow(job.id)">
         <div [routerLink]="['details', job.id]">{{ job.state }}</div>
         <div [routerLink]="['details', job.id]">{{ job.exchange }}</div>
         <div [routerLink]="['details', job.id]">{{ job.address }}</div>
@@ -41,7 +42,7 @@
         <div [routerLink]="['details', job.id]">{{ job.age }}</div>
         <div [routerLink]="['details', job.id]">{{ job.aerial_assignee }}
         </div>
-        <div [routerLink]="['details', selectedJobId]">{{ (statuses$ |
+        <div [routerLink]="['details', job.id]">{{ (statuses$ |
           async)?.[job.status - 1]?.name }}
         </div>
       </li>

@@ -10,6 +10,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectJobById } from 'src/app/store/jobs-table-selectors';
+import { loadNextJob,loadPrevJob } from 'src/app/store/jobs-table-actions';
 
 @Component({
   selector: 'app-details-home',
@@ -45,12 +46,10 @@ export class DetailsHomeComponent implements OnInit {
   }
 
   onClickPrev() {
-    // this.selectedJobId = this.selectedJobId - 1;
-    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
+   this.store.dispatch(loadPrevJob());
   }
   onClickNext() {
-    // this.selectedJobId = this.selectedJobId + 1;
-    // this.currentJob = this.jobsService.getJob(this.selectedJobId);
+    this.store.dispatch(loadNextJob());
   }
   
 
