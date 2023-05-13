@@ -2,7 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faFilter, faDownload, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Store, select } from '@ngrx/store';
-import { loadSelectedJob, loadStatuses, loadTable } from 'src/app/store/jobs-table-actions';
+import { loadSelectedJobId, loadStatuses, loadTable } from 'src/app/store/jobs-table-actions';
 import { jobSelector, statusesSelector } from 'src/app/store/jobs-table-selectors';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs';
@@ -25,14 +25,14 @@ export class CommercialJobsComponent implements OnInit {
   faUpload = faUpload;
   
   jobs$: Observable<Job[]>; 
-  statuses$: Observable<Status[]>;
+  // statuses$: Observable<Status[]>;
   selectedJobId = 0;
   statusIndex = 0;
   detailsHidden = true;
 
   constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute) {
     this.jobs$ = this.store.select(jobSelector);
-    this.statuses$ = this.store.select(statusesSelector);
+    // this.statuses$ = this.store.select(statusesSelector);
   }
 
   ngOnInit(): void {
@@ -42,7 +42,7 @@ export class CommercialJobsComponent implements OnInit {
   }
 
   clickSelectedRow(jobId: number): void {
-    this.store.dispatch(loadSelectedJob({jobId}));
+    this.store.dispatch(loadSelectedJobId({jobId}));
     console.log(jobId);
   }
 }

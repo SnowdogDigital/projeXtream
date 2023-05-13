@@ -1,0 +1,12 @@
+<div>{{ job.state }}</div>
+<div>{{ job.exchange }}</div>
+<div>{{ job.address }}</div>
+<div>{{ job.customer_name }}</div>
+<div>{{ job.order_no }}</div>
+<div>{{ job.due_date }}</div>
+<div>{{ job.age }}</div>
+<div>{{ job.aerial_assignee }}
+</div>
+<div>{{ (statuses$ |
+  async)?.[job.status - 1]?.name }}
+</div>

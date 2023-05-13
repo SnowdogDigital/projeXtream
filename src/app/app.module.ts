@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { jobsReducer, selectedJobReducer, statusesReducer } from './store/jobs-table-reducers';
+import { jobsReducer, selectedJobIdReducer, statusesReducer } from './store/jobs-table-reducers';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { jobsReducer, selectedJobReducer, statusesReducer } from './store/jobs-t
     FontAwesomeModule,
     NgChartsModule,
     HttpClientModule,
-    StoreModule.forRoot({jobs: jobsReducer, statuses: statusesReducer, selectedJob: selectedJobReducer}), 
+    StoreModule.forRoot({jobs: jobsReducer, statuses: statusesReducer, selectedJobId: selectedJobIdReducer}), 
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),

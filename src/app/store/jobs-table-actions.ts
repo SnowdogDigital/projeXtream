@@ -11,7 +11,7 @@ export const loadStatuses = createAction('[Commercial Component] Load Statuses')
 export const loadStatusesSuccess = createAction('[Statuses API] Load Statuses Success', props<{ statuses: Status[] }>());
 
 //? action for clicking table row to select job id
-export const loadSelectedJob = createAction('[Commercial Job Details] Load Selected Job', props<{ jobId: number }>());
+export const loadSelectedJobId = createAction('[Commercial Job Details] Load Selected Job ID', props<{ jobId: number }>());
 
 //? actions for clicking next & prev buttons in job details
 export const loadNextJob = createAction('[Commercial Job Details] Load Next Job');
