@@ -40,6 +40,7 @@ export class DetailsHomeComponent implements OnInit {
     const getId = this.route.snapshot.paramMap.get('id');
     const jobId = Number.parseInt(getId!);
     this.currentJob$ = this.store.select(selectJobById(jobId));
+    // const prevJob = this.currentJob$ - 1;
     // console.log(jobId);
     // console.log(this.currentJob$.order_no);
 

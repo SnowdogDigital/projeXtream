@@ -43,6 +43,5 @@ export class CommercialJobsComponent implements OnInit {
 
   clickSelectedRow(jobId: number): void {
     this.store.dispatch(loadSelectedJobId({jobId}));
-    console.log(jobId);
   }
 }
