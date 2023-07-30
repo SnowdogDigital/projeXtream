@@ -8,9 +8,16 @@ export const getSelectJob = createFeatureSelector<State>('jobs');
 // I might call this something like "getJobsState"
 export const jobSelector = createSelector(getSelectJob, (state: State) => state.jobs);
 
-export const getSelectedJob = createSelector(getSelectJob, (state: State) => state.jobs[state.selectedJobIndex]);
+export const getSelectedJob = createSelector(getSelectJob, (state: State) => {
+  if (state.selectedJobIndex !== null) {
+    return state.jobs[state.selectedJobIndex];
+  }
+  return null;
+}
+);
 
-export const getSelectedJobId = createSelector(getSelectedJob, (job: Job) => job.id);
+//? not needed
+// export const getSelectedJobId = createSelector(getSelectedJob, (job: Job) => job.id);
 
 export const getSelectStatus = createFeatureSelector<State>('statuses');
 

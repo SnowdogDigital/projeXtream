@@ -1,10 +1,10 @@
 import { createReducer, on } from "@ngrx/store";
 import { loadJobsSuccess, loadPrevJob, loadSelectedJobId, loadStatusesSuccess, setSelectedJobIndex } from "./jobs-table-actions";
-import { jobSelector } from "./jobs-table-selectors";
+// import { jobSelector } from "./jobs-table-selectors";
 import { Job } from "../interfaces/Job";
 import { Status } from "../interfaces/Status";
 
-// I would call this "JobState"
+//* I would call this "JobState"
 export interface State{jobs: Job[], statuses: Status[], selectedJobIndex: number | null, selectedJobId: number | null};
 
 export const initialState: State = {jobs: [], statuses: [], selectedJobIndex: null, selectedJobId: null};
