@@ -1,14 +1,14 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { Job } from "../interfaces/Job";
 import { Status } from '../interfaces/Status';
-import { State } from './jobs-table-reducers';
+import { JobState } from './jobs-table-reducers';
 
-export const getSelectJob = createFeatureSelector<State>('jobs');
+export const getSelectJob = createFeatureSelector<JobState>('jobs');
 
 // I might call this something like "getJobsState"
-export const jobSelector = createSelector(getSelectJob, (state: State) => state.jobs);
+export const jobSelector = createSelector(getSelectJob, (state: JobState) => state.jobs);
 
-export const getSelectedJob = createSelector(getSelectJob, (state: State) => {
+export const getSelectedJob = createSelector(getSelectJob, (state: JobState) => {
   if (state.selectedJobIndex !== null) {
     return state.jobs[state.selectedJobIndex];
   }
@@ -19,10 +19,11 @@ export const getSelectedJob = createSelector(getSelectJob, (state: State) => {
 //? not needed
 // export const getSelectedJobId = createSelector(getSelectedJob, (job: Job) => job.id);
 
-export const getSelectStatus = createFeatureSelector<State>('statuses');
+export const getSelectStatus = createFeatureSelector<JobState>('statuses');
 
-export const statusesSelector = createSelector(getSelectStatus, (state: State)=>state.statuses);
+export const statusesSelector = createSelector(getSelectStatus, (state: JobState)=>state.statuses);
 
-export const selectJobById = (jobId: number) => createSelector(getSelectJob, (state: State)=>state.jobs.filter(j => j.id === jobId)[0]);
+export const selectJobById = (jobId: number) => createSelector(getSelectJob, (state: JobState)=>state.jobs.filter(j => j.id === jobId)[0]);
 
-
+export const selectStatusById = (statusId: number) => createSelector(getSelectStatus, (state: JobState)=>state.statuses.filter(s => s.id === statusId)[0]);
+//! status.name from job.status isnt working yet ^

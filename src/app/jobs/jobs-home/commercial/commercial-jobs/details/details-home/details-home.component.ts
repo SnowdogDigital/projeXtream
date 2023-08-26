@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faCircleLeft, faCircleRight, faCirclePlus, faFilePdf, faMap, faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { Job } from '../../../../../../interfaces/Job';
@@ -6,10 +6,10 @@ import { Status } from '../../../../../../interfaces/Status';
 import { JobsService } from '../../../../../../services/jobs.service';
 import { StatusesService } from '../../../../../../services/statuses.service';
 
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectJobById } from 'src/app/store/jobs-table-selectors';
+import { selectJobById,selectStatusById } from 'src/app/store/jobs-table-selectors';
 import { loadNextJob,loadPrevJob } from 'src/app/store/jobs-table-actions';
 
 @Component({
@@ -27,9 +27,9 @@ export class DetailsHomeComponent implements OnInit {
 
   // jobs$: Observable<Job[]>; 
   currentJob$: Observable<Job>;
+  statuses$: Observable<Status>;
   hidden = true;
-  // selectedJobId = 0;
-  statuses$: Observable<Status[]>;
+  status: number;
   
   constructor(private store: Store<{jobs: Job[]}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
   }
@@ -39,12 +39,14 @@ export class DetailsHomeComponent implements OnInit {
     // this.currentJob = this.jobsService.getJob(this.selectedJobId);
     const getId = this.route.snapshot.paramMap.get('id');
     const jobId = Number.parseInt(getId!);
+    let statusId = 0;
     this.currentJob$ = this.store.select(selectJobById(jobId));
-    // const prevJob = this.currentJob$ - 1;
-    // console.log(jobId);
+    this.statuses$ = this.store.select(selectStatusById(statusId));
+    //! status.name from job.status isnt working yet ^
     // console.log(this.currentJob$.order_no);
 
   }
+
 
   onClickPrev() {
    this.store.dispatch(loadPrevJob());

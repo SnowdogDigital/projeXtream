@@ -5,9 +5,9 @@ import { Job } from "../interfaces/Job";
 import { Status } from "../interfaces/Status";
 
 //* I would call this "JobState"
-export interface State{jobs: Job[], statuses: Status[], selectedJobIndex: number | null, selectedJobId: number | null};
+export interface JobState{jobs: Job[], statuses: Status[], selectedJobIndex: number | null, selectedJobId: number | null};
 
-export const initialState: State = {jobs: [], statuses: [], selectedJobIndex: null, selectedJobId: null};
+export const initialState: JobState = {jobs: [], statuses: [], selectedJobIndex: null, selectedJobId: null};
 
 export const jobsReducer = createReducer(
   initialState.jobs,
@@ -18,7 +18,7 @@ export const jobsReducer = createReducer(
   on(loadStatusesSuccess, (state, props) => ({...state, statuses: props.statuses}))
 );
 
-//? not needed
+//! not needed
 // export const statusesReducer = createReducer(
 //   initialState.statuses,
 //   on(loadStatusesSuccess, (state, props) => ({...state, statuses: props.statuses})) // this can go into the jobsReducer
