@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectJobById,selectStatusById } from 'src/app/store/jobs-table-selectors';
-import { loadNextJob,loadPrevJob } from 'src/app/store/jobs-table-actions';
+import { changeSelectedJobIndex } from 'src/app/store/jobs-table-actions';
 
 @Component({
   selector: 'app-details-home',
@@ -30,6 +30,7 @@ export class DetailsHomeComponent implements OnInit {
   statuses$: Observable<Status>;
   hidden = true;
   status: number;
+  selectedJobIndex: number;
   
   constructor(private store: Store<{jobs: Job[]}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
   }
@@ -49,10 +50,10 @@ export class DetailsHomeComponent implements OnInit {
 
 
   onClickPrev() {
-   this.store.dispatch(loadPrevJob());
+   this.store.dispatch(changeSelectedJobIndex({delta: -1}));
   }
   onClickNext() {
-    this.store.dispatch(loadNextJob());
+    this.store.dispatch(changeSelectedJobIndex({delta: 1}));
   }
   
 

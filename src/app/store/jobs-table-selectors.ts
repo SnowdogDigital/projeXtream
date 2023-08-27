@@ -16,9 +16,6 @@ export const getSelectedJob = createSelector(getSelectJob, (state: JobState) => 
 }
 );
 
-//? not needed
-// export const getSelectedJobId = createSelector(getSelectedJob, (job: Job) => job.id);
-
 export const getSelectStatus = createFeatureSelector<JobState>('statuses');
 
 export const statusesSelector = createSelector(getSelectStatus, (state: JobState)=>state.statuses);
