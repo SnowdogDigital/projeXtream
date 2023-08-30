@@ -5,7 +5,7 @@ import { Job } from 'src/app/interfaces/Job';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectJobById } from 'src/app/store/jobs-table-selectors';
+import { selectJobById, selectJobByIndex } from 'src/app/store/jobs-table-selectors';
 
 
 @Component({
@@ -14,18 +14,17 @@ import { selectJobById } from 'src/app/store/jobs-table-selectors';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  // @Input() currentJob;
+  selectedJobIndex$: Observable<number>;
+  currentJob$: Observable<Job | null>;
 
-  currentJob$: Observable<Job>;
-
-  constructor(private store: Store<{jobs: Job[]}>,private route: ActivatedRoute, private router: Router) { }
+  constructor(private store: Store<{selectedJobIndex: number; jobs: Job[]}>,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    const getId = this.route.snapshot.paramMap.get('id');
-    const jobId = Number.parseInt(getId!);
-    this.currentJob$ = this.store.select(selectJobById(jobId));
-    console.log(jobId);
-
+    this.selectedJobIndex$ = this.store.select(state => state.selectedJobIndex);    
+    this.selectedJobIndex$.subscribe(selectedJobIndex => {
+      console.log(this.store.select(selectJobByIndex(selectedJobIndex)));
+      console.log('Selected Job Index:', selectedJobIndex);
+      this.currentJob$ = this.store.select(selectJobByIndex(selectedJobIndex));
+    });
   }
-
 }

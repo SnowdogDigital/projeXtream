@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-notes',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit {
+  @Input() hidden: boolean = true;
+  faSquareXmark = faSquareXmark;
+
 
   constructor() { }
 

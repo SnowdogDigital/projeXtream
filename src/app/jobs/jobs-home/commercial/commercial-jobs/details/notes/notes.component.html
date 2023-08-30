@@ -1,1 +1,10 @@
-<p>notes works!</p>
+<div class="close-modal section__notes--close">
+  <fa-icon [icon]="faSquareXmark" class="section__notes--close-icon close-modal_icon"
+    id="section__notes--close-icon"></fa-icon>
+</div>
+<ul id="notesList" class="section__notes--list">
+</ul>
+<div class="section__notes--add">
+  <input type="text" id="new-note" class="section__notes--add-new" placeholder="Enter message">
+  <button action="submit" id="section__notes-btn" class="btn" disabled>Add Note</button>
+</div>

@@ -2,12 +2,12 @@
   <section class="section__details--header">
     <div class="section__details--header-heading">
       <h3>{{ (currentJob$ | async)?.order_no }} :
-        {{ (statuses$ | async)?.name }}
+        {{ (currentJob$ | async)?.status }}
         <!-- status.name from job.status isnt working yet ^ -->
       </h3>
     </div>
     <div class="close-modal section__details--header-close">
-      <a routerLink="/jobs">
+      <a routerLink="/jobs/commercial">
         <fa-icon [icon]="faSquareXmark" class="close-modal_icon"></fa-icon>
       </a>
     </div>
@@ -134,20 +134,6 @@
     <fa-icon [icon]="faCircleLeft" (click)="onClickPrev()"></fa-icon>
   </section>
   <app-tabs class="section__details--router">
-    <!-- <ul class="section__details--router-nav">
-      <li class="section__details--router-nav_link">
-        <a routerLink="assignments" class="section__details--router-nav_link-a">Assignments</a>
-      </li>
-      <li class="section__details--router-nav_link">
-        <a routerLink="contacts" class="section__details--router-nav_link-a">Contacts</a>
-      </li>
-      <li class="section__details--router-nav_link">
-        <a routerLink="design" class="section__details--router-nav_link-a">Design</a>
-      </li>
-      <li class="section__details--router-nav_link">
-        <a routerLink="permits" class="section__details--router-nav_link-a">Permits</a>
-      </li>
-    </ul> -->
   </app-tabs>
   <section class="section__details--next">
     <fa-icon [icon]="faCircleRight" (click)="onClickNext()"></fa-icon>
@@ -158,140 +144,4 @@
     </div>
   </section>
 </main>
-<app-notes [ngClass]="{hidden: this.hidden === true}"></app-notes>
-
-<!-- <main id="section__details" class="section__details " name="details">
-  <section class="section__details--header">
-    <div class="section__details--header-heading">
-      <h3>order_no : status </h3>
-    </div>
-    <div class="close-modal section__details--header-close">
-      <a routerLink="/jobs">
-        <fa-icon [icon]="faSquareXmark" class="close-modal_icon"></fa-icon>
-      </a>
-    </div>
-  </section>
-  <section class="section__details--main">
-    <div class="section__details--main-info hidden">
-      <label for="jobID">ID</label>
-      <span id="jobID" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="dateAddedDiv" class="section__details--main-info">
-      <label for="date-added">ADDED</label>
-      <input type="date" id="date-added" class="section__details--main-info_input">
-    </div>
-    <div id="daysAgedDiv" class="section__details--main-info">
-      <label for="days-aged">Age</label>
-      <span id="days-aged" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="eisDiv" class="section__details--main-info">
-      <label for="date-eis">EIS DATE</label>
-      <input type="date" id="date-eis" class="section__details--main-info_input">
-    </div>
-    <div id="dueDateDiv" class="section__details--main-info">
-      <label for="date-due">DUE DATE</label>
-      <input type="date" id="date-due" class="section__details--main-info_input">
-    </div>
-    <div id="taskTypeDiv" class="section__details--main-info">
-      <label for="taskType">ORDER TYPE</label>
-      <span id="taskType" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="poDiv" class="section__details--main-info">
-      <label for="po">PO #</label>
-      <span id="po" class="section__details--main-info_field">data</span>
-    </div>
-    <div id="commitmentDiv" class="section__details--main-info">
-      <label for="commitment">Commitment</label>
-      <input id="commitment" type="text" name="commitment" placeholder="month to complete"
-        class="section__details--dates-info_field">
-    </div>
-    <div id="projectIDDiv" class="section__details--main-info">
-      <label for="projectID">PROJECT ID</label>
-      <span id="projectID" class="section__details--main-info_field">data</span>
-    </div>
-    <div id="workGroupDiv" class="section__details--main-info">
-      <label for="workGroup">WORKGROUP</label>
-      <span id="workGroup" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <br>
-    <div id="docNoDiv" class="section__details--main-info">
-      <label for="docNo">DOC #</label>
-      <span id="docNo" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="prodDiv" class="section__details--main-info">
-      <label for="prod">PROD</label>
-      <span id="prod" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="latLongDiv" class="section__details--main-info">
-      <label for="latLong">LAT. & LONG.</label>
-      <span id="latLong" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="stateDiv" class="section__details--main-info">
-      <label for="state">STATE</label>
-      <span id="state" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="exchangeDiv" class="section__details--main-info">
-      <label for="exchange">EXCHANGE</label>
-      <span id="exchange" class="section__details--main-info_field">data
-      </span>
-    </div>
-    <div id="addressDiv" class="section__details--main-info">
-      <label for="address">ADDRESS</label>
-      <span id="address">data
-      </span>
-    </div>
-    <br>
-    <div id="workRequiredDiv" class="section__details--main-info">
-      <label for="workRequired">WORK REQUIRED</label>
-      <input id="workRequired" type="text" class="section__details--build-info_field">
-    </div>
-    <div id="workPrintDiv" class="section__details--main-info">
-      <label for="workPrint">DESIGN</label>
-      <fa-icon [icon]="faMap"></fa-icon>
-    </div>
-    <div id="statusGroupDiv" class="section__details--main-info">
-      <label for="statusGroup">REPORT GROUP</label>
-      <select name="statusGroup" id="statusGroup" class="section__details--main-info_field-select">
-        <option value="" selected>In Progress</option>
-      </select>
-    </div>
-    <div id="jobStatusDiv" class="section__details--main-info">
-      <label for="jobStatus">STATUS</label>
-      <select name="jobStatus" id="jobStatus" class="section__details--main-info_field-select">
-        <option value="" selected>Placing</option>
-      </select>
-    </div>
-    <div id="subStatusDiv" class="section__details--main-info">
-      <label for="subStatus">SUB STATUS</label>
-      <select name="subStatus" id="subStatus" class="section__details--main-info_field-select">
-        <option value="" selected>Aerial</option>
-      </select>
-    </div>
-    <div id="jobCommentsDiv" class="section__details--main-info">
-      <label for="">NOTES</label>
-      <button (click)="toggleNotes($event)" id="jobComments" class="section__details--main-notes btn">View</button>
-    </div>
-  </section>
-  <section class="section__details--previous">
-    <fa-icon [icon]="faCircleLeft" (click)="onClickPrev()"></fa-icon>
-  </section>
-  <app-tabs class="section__details--router">
-  </app-tabs>
-  <section class="section__details--next">
-    <fa-icon [icon]="faCircleRight" (click)="onClickNext()"></fa-icon>
-  </section>
-  <section class="section__details--save">
-    <div class="section__details--save-changes">
-      <button id="section__details-btn" class="btn section__details--save-changes_btn" disabled>Save Changes</button>
-    </div>
-  </section>
-</main>
-<app-notes [ngClass]="{hidden: this.hidden === true}"></app-notes> -->
+<app-notes [ngClass]="{hidden: hidden}"></app-notes>

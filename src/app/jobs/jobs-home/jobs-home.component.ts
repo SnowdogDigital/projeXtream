@@ -27,19 +27,7 @@ export class JobsHomeComponent implements OnInit {
 
   constructor(private jobsService: JobsService, private statusesService: StatusesService) {}
 
-  ngOnInit(): void {
-    //! PRODUCTION VERSION
-    // this.jobsService.getJobs().subscribe((jobs) => (this.jobs = jobs));
-    // this.reviewGroupService.getReviewGroups().subscribe((reviewGroups) => (this.reviewGroups = reviewGroups));
-    // this.statusService.getStatuses().subscribe((statuses) => (this.statuses = statuses));
-    // this.subStatusService.getSubStatuses().subscribe((subStatuses) => (this.subStatuses = subStatuses));
-
-    //? DEMO VERSION
-    // this.jobs = this.jobsService.getJobs();
-    // this.reviewGroups = this.reviewGroupsService.getReviewGroups();
-    // this.statuses = this.statusesService.getStatuses();
-    // this.subStatuses = this.subStatusesService.getSubStatuses();
-  }
+  ngOnInit(): void {}
 
   onClickParent(e: any, job: any) {
     if (e.target.id) {
