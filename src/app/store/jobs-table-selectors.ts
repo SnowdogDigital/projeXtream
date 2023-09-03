@@ -31,5 +31,6 @@ export const selectJobByIndex = (index: number) =>
     }
   });
 
+
 export const selectStatusById = (statusId: number) => createSelector(getSelectStatus, (state: JobState)=>state.statuses.filter(s => s.id === statusId)[0]);
 //! status.name from job.status isnt working yet ^

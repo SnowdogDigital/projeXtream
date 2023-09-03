@@ -14,7 +14,6 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { jobsReducer } from './store/jobs-table-reducers';
-// import { jobsReducer, selectedJobIdReducer, statusesReducer, loadPrevJobReducer, selectedJobReducers } from './store/jobs-table-reducers';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { jobsReducer } from './store/jobs-table-reducers';
     NgChartsModule,
     HttpClientModule,
     StoreModule.forRoot({jobs: jobsReducer}), 
-    // StoreModule.forRoot({jobs: jobsReducer, statuses: statusesReducer, selectedJobId: selectedJobReducers }), 
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),

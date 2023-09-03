@@ -8,7 +8,7 @@ import { statusesSelector } from 'src/app/store/jobs-table-selectors';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectJobById } from 'src/app/store/jobs-table-selectors';
+// import { selectJobById } from 'src/app/store/jobs-table-selectors';
 
 
 @Component({

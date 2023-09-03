@@ -9,7 +9,7 @@ import { StatusesService } from '../../../../../../services/statuses.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { getSelectJob, jobSelector, selectJobById,selectJobByIndex,selectStatusById } from 'src/app/store/jobs-table-selectors';
+import { getSelectJob, getSelectedJob } from 'src/app/store/jobs-table-selectors';
 import { changeSelectedJobIndex } from 'src/app/store/jobs-table-actions';
 
 @Component({
@@ -35,36 +35,25 @@ export class DetailsHomeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    const getId = this.route.snapshot.paramMap.get('id');
-    const jobId = Number.parseInt(getId!);
-    let statusId = 0;
-    this.currentJob$ = this.store.select(selectJobById(jobId));
-    this.statuses$ = this.store.select(selectStatusById(statusId));
-    //! status.name from job.status isnt working yet ^
-    
+    this.store.select(getSelectJob).subscribe(jobState => {
+      const selectedJobIndex = jobState.selectedJobIndex;
+
+      if (selectedJobIndex !== null) {
+        this.currentJob$ = this.store.select(getSelectedJob);
+
+        //! determine the appropriate statusId based on the current job here
+        // this.statuses$ = this.store.select(selectStatusById(statusId));
+      }
+    });
   }
   
   
   onClickPrev() {
     this.store.dispatch(changeSelectedJobIndex({ delta: -1 }));
-  
-    this.store.select(getSelectJob).subscribe(jobState => {
-      const selectedJobIndex = jobState.selectedJobIndex;
-      if (selectedJobIndex !== null) {
-        this.currentJob$ = this.store.select(selectJobByIndex(selectedJobIndex));
-      }
-    });
   }
   
   onClickNext() {
     this.store.dispatch(changeSelectedJobIndex({ delta: 1 }));
-  
-    this.store.select(getSelectJob).subscribe(jobState => {
-      const selectedJobIndex = jobState.selectedJobIndex;
-      if (selectedJobIndex !== null) {
-        this.currentJob$ = this.store.select(selectJobByIndex(selectedJobIndex));
-      }
-    });
   }
     
 
