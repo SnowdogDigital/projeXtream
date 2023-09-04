@@ -15,7 +15,6 @@ export const jobsReducer = createReducer(
     const newSelectedIndex = props.jobIndex;
   
     if (newSelectedIndex < 0 || newSelectedIndex >= state.jobs.length) {
-      // Invalid index, do nothing or return the current state
       return state;
     }
   
@@ -31,7 +30,7 @@ export const jobsReducer = createReducer(
       : null;
 
     if (newSelectedIndex !== null && (newSelectedIndex < 0 || newSelectedIndex >= state.jobs.length)) {
-      return state; // Prevent going out of bounds
+      return state; 
     }
 
     return { ...state, selectedJobIndex: newSelectedIndex, selectedCurrentJob: newSelectedIndex !== null ? state.jobs[newSelectedIndex] : null};

@@ -32,7 +32,7 @@
     <ul class="section__jobs--list-rows">
       <li>
         <app-job-row *ngFor="let job of jobs$ | async; let i = index" [job]="job" [routerLink]="['details', job.id]"
-          class="section__jobs--list-rows_job" [ngClass]="{selected: job.id === selectedJobId}"
+          class="section__jobs--list-rows_job" [ngClass]="{'selected': i === currentJobIndex}"
           (click)="clickSelectedRow(i)"></app-job-row>
       </li>
     </ul>
