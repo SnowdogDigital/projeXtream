@@ -7,6 +7,4 @@
 <div>{{ job.age }}</div>
 <div>{{ job.aerial_assignee }}
 </div>
-<div>{{ (statuses$ |
-  async)?.[job.status - 1]?.name }}
-</div>
+<div>{{ (statuses$ | async) }}</div>

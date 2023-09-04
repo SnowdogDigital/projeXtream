@@ -7,10 +7,10 @@ import { JobsService } from '../../../../../../services/jobs.service';
 import { StatusesService } from '../../../../../../services/statuses.service';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of, map, switchMap } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { getSelectJob, getSelectedJob } from 'src/app/store/jobs-table-selectors';
 import { changeSelectedJobIndex } from 'src/app/store/jobs-table-actions';
+import { getSelectJob, getSelectedJob, selectStatusById } from 'src/app/store/jobs-table-selectors';
 
 @Component({
   selector: 'app-details-home',
@@ -26,10 +26,11 @@ export class DetailsHomeComponent implements OnInit {
   faSquareXmark = faSquareXmark;
 
   currentJob$: Observable<Job | null>;
-  statuses$: Observable<Status>;
+  statuses$: Observable<string | undefined>;
   hidden = true;
   status: number;
   selectedJobIndex: number;
+  statusId: number | null;
   
   constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
   }
@@ -41,8 +42,16 @@ export class DetailsHomeComponent implements OnInit {
       if (selectedJobIndex !== null) {
         this.currentJob$ = this.store.select(getSelectedJob);
 
-        //! determine the appropriate statusId based on the current job here
-        // this.statuses$ = this.store.select(selectStatusById(statusId));
+        this.statuses$ = this.currentJob$.pipe(
+          map(currentJob => currentJob?.status),
+          switchMap(statusId => {
+            if (statusId !== undefined) {
+              return this.store.select(selectStatusById(statusId));
+            } else {
+              return of('Status Not Found');
+            }
+          })
+        );
       }
     });
   }

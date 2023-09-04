@@ -2,8 +2,7 @@
   <section class="section__details--header">
     <div class="section__details--header-heading">
       <h3>{{ (currentJob$ | async)?.order_no }} :
-        {{ (currentJob$ | async)?.status }}
-        <!-- status.name from job.status isnt working yet ^ -->
+        {{ (statuses$ | async) }}
       </h3>
     </div>
     <div class="close-modal section__details--header-close">

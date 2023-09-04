@@ -1,14 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Job } from 'src/app/interfaces/Job';
 import { Status } from 'src/app/interfaces/Status';
-import { JobsService } from 'src/app/services/jobs.service';
-import { StatusesService } from 'src/app/services/statuses.service';
-import { statusesSelector } from 'src/app/store/jobs-table-selectors';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-// import { selectJobById } from 'src/app/store/jobs-table-selectors';
+import { selectStatusById } from 'src/app/store/jobs-table-selectors';
 
 
 @Component({
@@ -18,14 +14,15 @@ import { Store } from '@ngrx/store';
 })
 export class JobRowComponent implements OnInit {
   @Input() job: any; 
-  statuses$: Observable<Status[]>;
+  statuses$: Observable<string | undefined>;
+  // statusName: string | undefined;  
+  // status$: Observable<Status | undefined>;
 
-
-  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
-    this.statuses$ = this.store.select(statusesSelector);
+  constructor(private store: Store<{}>, private route: ActivatedRoute, private router: Router) {
   }
-
+  
   ngOnInit(): void {
+    this.statuses$ = this.store.select(selectStatusById(this.job.status));
   }
-
 }
+  
