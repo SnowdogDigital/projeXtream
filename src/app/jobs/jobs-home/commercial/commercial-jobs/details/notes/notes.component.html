@@ -3,6 +3,9 @@
     id="section__notes--close-icon"></fa-icon>
 </div>
 <ul id="notesList" class="section__notes--list">
+  <li *ngFor="let note of notes$ | async">
+    <div>{{ note.date }}-{{ note.username }}: {{ note.text }}</div>
+  </li>
 </ul>
 <div class="section__notes--add">
   <input type="text" id="new-note" class="section__notes--add-new" placeholder="Enter message">

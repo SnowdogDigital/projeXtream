@@ -67,7 +67,6 @@ export class DetailsHomeComponent implements OnInit {
     
 
   toggleNotes(e: any) {
-    console.log(e.target);
     if (e.target.innerText === 'View') {
       e.target.innerText = "Hide";
       this.hidden = false;

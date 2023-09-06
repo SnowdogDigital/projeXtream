@@ -4,7 +4,8 @@ import { of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { JobsService } from '../services/jobs.service';
 import { StatusesService } from '../services/statuses.service';
-import { loadJobsSuccess, loadStatusesSuccess } from './jobs-table-actions';
+import { NotesService } from '../services/notes-service.service';
+import { loadJobsSuccess, loadNotesSuccess, loadStatusesSuccess } from './jobs-table-actions';
 
 
 @Injectable()
@@ -47,6 +48,28 @@ export class StatusesEffects {
   constructor(
     private actions$: Actions, 
     private statusesService: StatusesService
+    ) {}
+
+}
+
+@Injectable()
+export class NotesEffects {
+
+  loadNotes$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType('[Commercial Component] Load Notes'),
+    mergeMap(() => this.notesService.getNotes()
+      .pipe(
+        map(notes => (loadNotesSuccess({notes: notes}))),
+        catchError(() => of({type: '[Notes API] Statuses Load Error' }))
+        )
+      )
+    )
+  );
+
+  constructor(
+    private actions$: Actions, 
+    private notesService: NotesService
     ) {}
 
 }
