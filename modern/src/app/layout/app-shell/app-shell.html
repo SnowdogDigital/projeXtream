@@ -1,0 +1,33 @@
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      ProjeXtream
+    </div>
+
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="active">
+        Dashboard
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active">
+        Projects
+      </a>
+
+      <a routerLink="/jobs" routerLinkActive="active">
+        Jobs
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <span>Keep Work Moving.</span>
+    </header>
+
+    <section class="page-content">
+      <router-outlet />
+    </section>
+  </main>
+
+</div>
