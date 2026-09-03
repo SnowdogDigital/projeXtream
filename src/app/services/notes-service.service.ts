@@ -11,11 +11,11 @@ export class NotesService {
 
   constructor(private host: HttpClient) { }
 
-  getNotes(): Observable<Note[]> {
+  getAllNotes(): Observable<Note[]> {
     return this.host.get<Note[]>(this.apiUrl);
   }
 
-  getNote(id: number): Observable<Note> {
-      return this.host.get<Note>(`${this.apiUrl}/${id}`);
+  getJobNotes(job_id: number): Observable<Note> {
+      return this.host.get<Note>(`${this.apiUrl}?job_id=${job_id}`);
 }
 }

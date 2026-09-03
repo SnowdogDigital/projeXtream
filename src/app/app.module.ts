@@ -5,15 +5,15 @@ import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { JobEffects, StatusesEffects } from './store/jobs-table-effects';
 import { EffectsModule } from '@ngrx/effects';
+import { JobEffects, NotesEffects, StatusesEffects } from './store/jobs-table-effects';
+import { jobsReducer } from './store/jobs-table-reducers';
 import { environment } from 'src/environments/environment';
 
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { jobsReducer } from './store/jobs-table-reducers';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { jobsReducer } from './store/jobs-table-reducers';
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([JobEffects, StatusesEffects]),
+    EffectsModule.forRoot([JobEffects, NotesEffects, StatusesEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { faCircleLeft, faCircleRight, faCirclePlus, faFilePdf, faMap, faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { Job } from '../../../../../../interfaces/Job';
-import { Status } from '../../../../../../interfaces/Status';
-import { JobsService } from '../../../../../../services/jobs.service';
-import { StatusesService } from '../../../../../../services/statuses.service';
+import { Note } from 'src/app/interfaces/Note';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, of, map, switchMap } from 'rxjs';
+import { Observable, of, map, switchMap, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { changeSelectedJobIndex } from 'src/app/store/jobs-table-actions';
-import { getSelectJob, getSelectedJob, selectStatusById } from 'src/app/store/jobs-table-selectors';
+import { changeSelectedJobIndex, loadNotes } from 'src/app/store/jobs-table-actions';
+import { getSelectJob, getSelectedJob, notesSelector, selectStatusById } from 'src/app/store/jobs-table-selectors';
+import { NotesService } from 'src/app/services/notes-service.service';
 
 @Component({
   selector: 'app-details-home',
@@ -25,23 +24,32 @@ export class DetailsHomeComponent implements OnInit {
   faMap = faMap;
   faSquareXmark = faSquareXmark;
 
+  private selectJobSubscription: Subscription | null = null;
   currentJob$: Observable<Job | null>;
   statuses$: Observable<string | undefined>;
+  notes$: Observable<Note[]>;
+  
   hidden = true;
   status: number;
   selectedJobIndex: number;
   statusId: number | null;
   
-  constructor(private store: Store<{}>, private jobsService: JobsService, private statusesService: StatusesService, private route: ActivatedRoute, private router: Router) {
+  constructor(private store: Store<{}>, private route: ActivatedRoute, private router: Router, private notes: NotesService) {
+    this.notes$ = this.store.select(notesSelector);
   }
-  
   ngOnInit(): void {
-    this.store.select(getSelectJob).subscribe(jobState => {
+    let jobId: number | null = null;
+    this.selectJobSubscription = this.store.select(getSelectJob).subscribe(jobState => {
       const selectedJobIndex = jobState.selectedJobIndex;
-
+      
       if (selectedJobIndex !== null) {
         this.currentJob$ = this.store.select(getSelectedJob);
-
+        this.currentJob$.subscribe(selectedJob => {
+          if (selectedJob) {
+            jobId = selectedJob.id;
+          }
+        });
+        
         this.statuses$ = this.currentJob$.pipe(
           map(currentJob => currentJob?.status),
           switchMap(statusId => {
@@ -51,9 +59,13 @@ export class DetailsHomeComponent implements OnInit {
               return of('Status Not Found');
             }
           })
-        );
-      }
-    });
+          );
+          if (jobId !== null) {
+            console.log(jobId);
+            this.store.dispatch(loadNotes({jobId}));
+          }
+        }
+      });
   }
   
   
@@ -73,6 +85,13 @@ export class DetailsHomeComponent implements OnInit {
     } else {
       e.target.innerText = "View";
       this.hidden = true;
+    }
+  }
+
+  
+  ngOnDestroy(): void {
+    if (this.selectJobSubscription) {
+      this.selectJobSubscription.unsubscribe();
     }
   }
 }

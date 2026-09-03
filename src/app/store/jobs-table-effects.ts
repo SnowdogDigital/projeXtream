@@ -58,7 +58,7 @@ export class NotesEffects {
   loadNotes$ = createEffect(() =>
   this.actions$.pipe(
     ofType('[Commercial Component] Load Notes'),
-    mergeMap(() => this.notesService.getNotes()
+    mergeMap(() => this.notesService.getAllNotes()
       .pipe(
         map(notes => (loadNotesSuccess({notes: notes}))),
         catchError(() => of({type: '[Notes API] Statuses Load Error' }))

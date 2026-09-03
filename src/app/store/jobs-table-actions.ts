@@ -11,7 +11,7 @@ export const loadStatuses = createAction('[Commercial Component] Load Statuses')
 
 export const loadStatusesSuccess = createAction('[Statuses API] Load Statuses Success', props<{ statuses: Status[] }>());
 
-export const loadNotes = createAction('[Commercial Component] Load Notes');
+export const loadNotes = createAction('[Commercial Component] Load Notes', props<{ jobId: number }>());
 
 export const loadNotesSuccess = createAction('[Notes API] Load Notes Success', props<{ notes: Note[] }>());
 
