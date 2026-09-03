@@ -1,2 +1,69 @@
-<h1>Projects</h1>
-<p>Higher level management of grouped jobs.</p>
+<div class="page-header">
+  <div>
+    <h1>Projects</h1>
+    <p>Manage projects and the jobs connected to them.</p>
+  </div>
+
+  <button class="primary-action">
+    + New Project
+  </button>
+</div>
+
+<section class="toolbar">
+  <input type="search" placeholder="Search projects..." aria-label="Search projects" />
+
+  <select aria-label="Filter projects by status">
+    <option>All Statuses</option>
+    <option>Active</option>
+    <option>Pending</option>
+    <option>Complete</option>
+  </select>
+</section>
+
+<section class="table-card">
+  <table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Customer</th>
+        <th>Status</th>
+        <th>Jobs</th>
+        <th>Project Manager</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="project-name">Northern Fiber Expansion</td>
+        <td>Northstar Communications</td>
+        <td><span class="status active">Active</span></td>
+        <td>14</td>
+        <td>Craig Colwell</td>
+      </tr>
+
+      <tr>
+        <td class="project-name">Downtown Network Upgrade</td>
+        <td>Summit Telecom</td>
+        <td><span class="status active">Active</span></td>
+        <td>8</td>
+        <td>Sarah Mitchell</td>
+      </tr>
+
+      <tr>
+        <td class="project-name">West Campus Buildout</td>
+        <td>Blue Ridge Services</td>
+        <td><span class="status pending">Pending</span></td>
+        <td>5</td>
+        <td>Mike Lawson</td>
+      </tr>
+
+      <tr>
+        <td class="project-name">Legacy Plant Retirement</td>
+        <td>Mountain State Utilities</td>
+        <td><span class="status complete">Complete</span></td>
+        <td>21</td>
+        <td>Jennifer Cole</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

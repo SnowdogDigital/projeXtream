@@ -1,2 +1,102 @@
-<h1>Jobs</h1>
-<p>Track & manage location specific work.</p>
+<div class="page-header">
+  <div>
+    <h1>Jobs</h1>
+    <p>Your operational work queue across projects.</p>
+  </div>
+
+  <button class="primary-action">
+    + New Job
+  </button>
+</div>
+
+<section class="view-bar">
+  <div class="saved-view">
+    <span class="view-label">Saved View</span>
+    <strong>My Active Jobs</strong>
+  </div>
+
+  <button class="secondary-action">
+    Edit Filters
+  </button>
+</section>
+
+<section class="toolbar">
+  <input type="search" placeholder="Search jobs..." aria-label="Search jobs" />
+
+  <select aria-label="Filter jobs by status">
+    <option>Active Statuses</option>
+    <option>Assigned</option>
+    <option>In Progress</option>
+    <option>On Hold</option>
+    <option>Complete</option>
+  </select>
+
+  <select aria-label="Filter jobs by project">
+    <option>All Projects</option>
+    <option>Northern Fiber Expansion</option>
+    <option>Downtown Network Upgrade</option>
+    <option>West Campus Buildout</option>
+  </select>
+</section>
+
+<section class="table-card">
+  <table>
+    <thead>
+      <tr>
+        <th>Job</th>
+        <th>Project</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>Assigned To</th>
+        <th>Updated</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="job-name">NF-1042</td>
+        <td>Northern Fiber Expansion</td>
+        <td>Martinsburg, WV</td>
+        <td><span class="status progress">In Progress</span></td>
+        <td>Field Team 2</td>
+        <td>Today</td>
+      </tr>
+
+      <tr>
+        <td class="job-name">NF-1048</td>
+        <td>Northern Fiber Expansion</td>
+        <td>Hedgesville, WV</td>
+        <td><span class="status assigned">Assigned</span></td>
+        <td>Ryan Carter</td>
+        <td>Today</td>
+      </tr>
+
+      <tr>
+        <td class="job-name">DN-2217</td>
+        <td>Downtown Network Upgrade</td>
+        <td>Winchester, VA</td>
+        <td><span class="status hold">On Hold</span></td>
+        <td>Sarah Mitchell</td>
+        <td>Yesterday</td>
+      </tr>
+
+      <tr>
+        <td class="job-name">WC-0312</td>
+        <td>West Campus Buildout</td>
+        <td>Charles Town, WV</td>
+        <td><span class="status progress">In Progress</span></td>
+        <td>Field Team 1</td>
+        <td>Yesterday</td>
+      </tr>
+
+      <tr>
+        <td class="job-name">DN-2204</td>
+        <td>Downtown Network Upgrade</td>
+        <td>Winchester, VA</td>
+        <td><span class="status complete">Complete</span></td>
+        <td>Mike Lawson</td>
+        <td>Sep 1</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
