@@ -4,9 +4,7 @@
     <p>Your operational work queue across projects.</p>
   </div>
 
-  <button class="primary-action">
-    + New Job
-  </button>
+  <button class="primary-action">+ New Job</button>
 </div>
 
 <section class="view-bar">
@@ -15,9 +13,7 @@
     <strong>My Active Jobs</strong>
   </div>
 
-  <button class="secondary-action">
-    Edit Filters
-  </button>
+  <button class="secondary-action">Edit Filters</button>
 </section>
 
 <section class="toolbar">
@@ -43,60 +39,39 @@
   <table>
     <thead>
       <tr>
-        <th>Job</th>
+        <th>Order</th>
         <th>Project</th>
+        <th>Customer</th>
         <th>Location</th>
         <th>Status</th>
-        <th>Assigned To</th>
-        <th>Updated</th>
+        <th>Sub Status</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr [routerLink]="['/jobs', 'NF-1042']" tabindex="0">
-        <td class="job-name">NF-1042 </td>
-        <td>Northern Fiber Expansion</td>
-        <td>Martinsburg, WV</td>
-        <td><span class="status progress">In Progress</span></td>
-        <td>Field Team 2</td>
-        <td>Today</td>
-      </tr>
+      @for (job of jobs; track job.id) {
+        <tr [routerLink]="['/jobs', job.id]" tabindex="0">
+          <td>
+            <strong>{{ job.order_no }}</strong>
+          </td>
 
-      <tr [routerLink]="['/jobs', 'NF-1048']" tabindex="0">
-        <td class="job-name">NF-1048 </td>
-        <td>Northern Fiber Expansion</td>
-        <td>Hedgesville, WV</td>
-        <td><span class="status assigned">Assigned</span></td>
-        <td>Ryan Carter</td>
-        <td>Today</td>
-      </tr>
+          <td>{{ job.project_id }}</td>
 
-      <tr [routerLink]="['/jobs', 'DN-2217']" tabindex="0">
-        <td class="job-name">DN-2217</td>
-        <td>Downtown Network Upgrade</td>
-        <td>Winchester, VA</td>
-        <td><span class="status hold">On Hold</span></td>
-        <td>Sarah Mitchell</td>
-        <td>Yesterday</td>
-      </tr>
+          <td>{{ job.customer_name }}</td>
 
-      <tr [routerLink]="['/jobs', 'WC-0312']" tabindex="0">
-        <td class="job-name">WC-0312 </td>
-        <td>West Campus Buildout</td>
-        <td>Charles Town, WV</td>
-        <td><span class="status progress">In Progress</span></td>
-        <td>Field Team 1</td>
-        <td>Yesterday</td>
-      </tr>
+          <td>{{ job.address }}, {{ job.state }}</td>
 
-      <tr [routerLink]="['/jobs', 'DN-2204']" tabindex="0">
-        <td class="job-name">DN-2204 </td>
-        <td>Downtown Network Upgrade</td>
-        <td>Winchester, VA</td>
-        <td><span class="status complete">Complete</span></td>
-        <td>Mike Lawson</td>
-        <td>Sep 1</td>
-      </tr>
+          <td>
+            <span class="status-chip">
+              {{ formatLabel(getStatusName(job.status)) }}
+            </span>
+          </td>
+
+          <td>
+            {{ formatLabel(getSubStatusName(job.sub_status)) }}
+          </td>
+        </tr>
+      }
     </tbody>
   </table>
 </section>
